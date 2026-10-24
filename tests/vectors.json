@@ -1,0 +1,5334 @@
+{
+ "cases": [
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "example",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "exact",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "example_exact",
+   "result": {
+    "barite": {
+     "final_volume": 618.8916876574307,
+     "lb_per_bbl": 46.284634760705345,
+     "sacks": 277.7078085642321,
+     "sacks_rounded_up": 278,
+     "total_lb": 27770.780856423207,
+     "volume_increase": 18.89168765743075,
+     "volume_increase_per_bbl": 0.03148614609571792
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 485.32182103610677,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 485.32182103610677,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.56923076923077,
+    "kmw_basis": "exact",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.165658856651305,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1226.3999999999994,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.5321821036107,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.0643642072214,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 740.596546310832,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.1287284144427,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 667.6609105180534,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 631.193092621664,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 594.7252747252747,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 558.2574568288853,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 521.789638932496,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 485.32182103610677,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.165658856651305,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 526.8951334379906,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.798947573843805,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 507.2025117739404,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 485.32182103610677,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": true,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "example_deviated_flag",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": true,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 815.9068146718147,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 781.8136293436294,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 747.720444015444,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 713.6272586872586,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 679.5340733590733,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 645.440888030888,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 611.3477027027027,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 577.2545173745173,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 543.1613320463321,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "bad",
+      "message": "A straight line from ICP to FCP would run up to 21 psi below the section schedule (underbalanced). Use the section schedule."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 6.5,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "example_surface_lines",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 214.36771241830064,
+     "first_strokes": 6431.03137254902,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 56.595163398692804,
+     "second_phase1_strokes": 1697.8549019607842,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 2.1241830065359477,
+     "surface_to_bit": 56.595163398692804,
+     "total_circulation": 214.36771241830064
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 63.72549019607843
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 227.138431372549
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 390.5513725490196
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 553.9643137254901
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 717.3772549019608
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 880.7901960784313
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 1044.2031372549018
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1207.6160784313727
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1371.029019607843
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1534.4419607843136
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1697.8549019607842
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 63.72549019607843,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1606.407843137255,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1652.678431372549,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1697.8549019607842,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 63.72549019607843,
+     "surface_to_bit": 1697.8549019607842,
+     "total_circulation": 6431.03137254902
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 6.5,
+     "surface_to_bit": 173.1812,
+     "total_circulation": 655.9652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": null,
+    "lot_pressure": 1400,
+    "lot_test_mw": 9.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "lot_from_pressure",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 13.987179487179487,
+    "lot_source": "pressure",
+    "maasp_kmw": 1056.8,
+    "maasp_omw": 1306.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 40,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 780,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "influx_spill",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.16115026370465085,
+     "height": 1090.5446623093683,
+     "sections": [
+      {
+       "height": 600.0,
+       "name": "DC x open hole",
+       "volume": 17.483999999999998
+      },
+      {
+       "height": 490.5446623093682,
+       "name": "DP/HWDP x open hole",
+       "volume": 22.516000000000002
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 200,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 900,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "influx_three_sections",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.3988165629191458,
+     "height": 4513.310050446255,
+     "sections": [
+      {
+       "height": 600.0,
+       "name": "DC x open hole",
+       "volume": 17.483999999999998
+      },
+      {
+       "height": 3400.0,
+       "name": "DP/HWDP x open hole",
+       "volume": 156.06
+      },
+      {
+       "height": 513.3100504462551,
+       "name": "DP x casing",
+       "volume": 26.45599999999999
+      }
+     ],
+     "type": "oil, condensate or mixed"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     },
+     {
+      "code": "influx_above_shoe",
+      "level": "warn",
+      "message": "Calculated influx height extends above the shoe."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 420,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "heavy_influx_water",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.4707466666666667,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "water"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 300,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "sicp_lt_sidpp",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.7038666666666666,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "water"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "sicp_lt_sidpp",
+      "level": "warn",
+      "message": "SICP is lower than SIDPP. This is unusual: check for a float or string influx, a plugged or washed gauge, trapped pressure, or an influx lighter than the annulus fluid being absent. Verify before using any number here."
+     },
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     },
+     {
+      "code": "influx_gradient_heavy",
+      "level": "warn",
+      "message": "Calculated influx gradient is heavier than the mud. Check SICP and SIDPP."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 0,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "zero_gain",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": null,
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     },
+     {
+      "code": "no_pit_gain",
+      "level": "info",
+      "message": "Pit gain is zero, so influx height and gradient are not calculated."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 150,
+    "sidpp": 0,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "zero_sidpp",
+   "result": {
+    "barite": {
+     "final_volume": 600.0,
+     "lb_per_bbl": 0.0,
+     "sacks": 0.0,
+     "sacks_rounded_up": 0,
+     "total_lb": 0.0,
+     "volume_increase": 0.0,
+     "volume_increase_per_bbl": 0.0
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 450.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 0.0,
+     "second_hold_dp_pressure": 449.99999999999994,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 449.99999999999994,
+    "icp": 450.0,
+    "influx": {
+     "gradient": 0.21820000000000006,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 9.8,
+    "kmw_basis": "rounded",
+    "kmw_exact": 9.8,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 9.8,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": 0.0,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1466.3999999999996,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 450.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 450.0,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 450.0,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 450.0,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 450.0,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 450.0,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 449.99999999999994,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 449.99999999999994,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 449.99999999999994,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 449.99999999999994,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 449.99999999999994,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 450.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 449.99999999999994,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 449.99999999999994,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 449.99999999999994,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "sidpp_zero",
+      "level": "warn",
+      "message": "SIDPP is zero. If a float is in the string, SIDPP must be read by bumping the float before KMW can be trusted."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 10.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "kmw_over_lot",
+   "result": {
+    "barite": {
+     "final_volume": 619.672131147541,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": 289.1803278688521,
+     "sacks_rounded_up": 290,
+     "total_lb": 28918.03278688521,
+     "volume_increase": 19.67213114754096,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 10.5,
+    "lot_source": "emw",
+    "maasp_kmw": -31.19999999999989,
+    "maasp_omw": 218.39999999999975,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     },
+     {
+      "code": "kmw_over_lot",
+      "level": "bad",
+      "message": "Kill mud weight is at or above the shoe LOT/FIT EMW. Losses at the shoe are expected once KMW is in the annulus above the shoe. Stop and escalate."
+     },
+     {
+      "code": "sicp_over_maasp",
+      "level": "bad",
+      "message": "SICP is at or above MAASP for the current mud weight. The shoe may already be at risk. Escalate before circulating."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": null,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "no_active_volume",
+   "result": {
+    "barite": {
+     "final_volume": null,
+     "lb_per_bbl": 48.19672131147535,
+     "sacks": null,
+     "sacks_rounded_up": null,
+     "total_lb": null,
+     "volume_increase": null,
+     "volume_increase_per_bbl": 0.0327868852459016
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.73469387755097,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 486.73469387755097,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.6,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.6,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.08365673452056,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1216.8,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6734693877551,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3469387755102,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0204081632653,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.6938775510204,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3673469387754,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 632.0408163265306,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.7142857142857,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.3877551020407,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0612244897959,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.73469387755097,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.08365673452056,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.1469387755102,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.75323490567132,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.5306122448979,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.73469387755097,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "kmw_round_increment": 0.5,
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "round_increment_half",
+   "result": {
+    "barite": {
+     "final_volume": 630.0,
+     "lb_per_bbl": 73.49999999999996,
+     "sacks": 440.9999999999997,
+     "sacks_rounded_up": 441,
+     "total_lb": 44099.99999999997,
+     "volume_increase": 29.999999999999982,
+     "volume_increase_per_bbl": 0.04999999999999997
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588235,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.24352941176474,
+     "first_strokes": 6367.305882352942,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 505.1020408163265,
+     "second_phase1_minutes": 54.47098039215687,
+     "second_phase1_strokes": 1634.129411764706,
+     "second_phase2_minutes": 157.77254901960785,
+     "second_phase2_strokes": 4733.176470588235
+    },
+    "fcp": 505.1020408163265,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 11.0,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.5,
+    "kmw_rounded": 11.0,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -20.017629146820013,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1092.0,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.71372549019609,
+     "bit_to_surface": 157.77254901960785,
+     "string": 54.47098039215687,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.47098039215687,
+     "total_circulation": 212.24352941176474
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 815.5102040816327,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 781.0204081632653,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 746.530612244898,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 712.0408163265306,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 677.5510204081633,
+      "step": 5,
+      "strokes": 817.064705882353
+     },
+     {
+      "pressure": 643.0612244897959,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 608.5714285714286,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 574.0816326530612,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 539.5918367346937,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 505.1020408163265,
+      "step": 10,
+      "strokes": 1634.129411764706
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -20.017629146820013,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 544.4204081632653,
+      "strokes": 1542.6823529411765,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.158970219429534,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 525.7959183673469,
+      "strokes": 1588.9529411764706,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 505.1020408163265,
+      "strokes": 1634.129411764706,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.4117647058827,
+     "bit_to_surface": 4733.176470588235,
+     "string": 1634.129411764706,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.129411764706,
+     "total_circulation": 6367.305882352942
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.784,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 20 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x OH"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 4400,
+      "name": "DP x OH"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 7000,
+      "name": "DP x csg"
+     }
+    ],
+    "deviated": true,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 7000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 2000,
+      "capacity": 0.01776,
+      "length": 2000,
+      "name": "DP vertical"
+     },
+     {
+      "bottom_tvd": 4500,
+      "capacity": 0.01776,
+      "length": 3000,
+      "name": "DP build"
+     },
+     {
+      "bottom_tvd": 8200,
+      "capacity": 0.01776,
+      "length": 5800,
+      "name": "DP tangent"
+     },
+     {
+      "bottom_tvd": 8600,
+      "capacity": 0.00874,
+      "length": 600,
+      "name": "HWDP"
+     },
+     {
+      "bottom_tvd": 9000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "DC"
+     }
+    ],
+    "surface_line_volume": 4.0,
+    "units": "imperial",
+    "well_md": 12000,
+    "well_tvd": 9000
+   },
+   "name": "j_well_deviated",
+   "result": {
+    "barite": {
+     "final_volume": 622.2222222222222,
+     "lb_per_bbl": 54.44444444444436,
+     "sacks": 326.6666666666661,
+     "sacks_rounded_up": 327,
+     "total_lb": 32666.666666666613,
+     "volume_increase": 22.222222222222186,
+     "volume_increase_per_bbl": 0.03703703703703698
+    },
+    "deviated": true,
+    "drillers": {
+     "first_bottoms_up_strokes": 5688.470588235295,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 256.8248366013072,
+     "first_strokes": 7704.745098039216,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 491.3265306122449,
+     "second_phase1_minutes": 67.2091503267974,
+     "second_phase1_strokes": 2016.274509803922,
+     "second_phase2_minutes": 189.6156862745098,
+     "second_phase2_strokes": 5688.470588235295
+    },
+    "fcp": 491.3265306122449,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x OH",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.7,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.654700854700856,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.7,
+    "linear_excess_max": 24.84049481143245,
+    "linear_excess_min": -13.900086762861406,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1185.6000000000001,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 71.71372549019608,
+     "bit_to_surface": 189.6156862745098,
+     "string": 65.90196078431374,
+     "surface_line": 1.3071895424836601,
+     "surface_to_bit": 67.2091503267974,
+     "total_circulation": 256.8248366013072
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 39.21568627450981
+     },
+     {
+      "pressure": 803.4449644159465,
+      "step": 1,
+      "strokes": 236.92156862745102
+     },
+     {
+      "pressure": 758.8969358389002,
+      "step": 2,
+      "strokes": 434.62745098039227
+     },
+     {
+      "pressure": 720.7528111657576,
+      "step": 3,
+      "strokes": 632.3333333333335
+     },
+     {
+      "pressure": 682.6086864926151,
+      "step": 4,
+      "strokes": 830.0392156862747
+     },
+     {
+      "pressure": 650.3471685641482,
+      "step": 5,
+      "strokes": 1027.745098039216
+     },
+     {
+      "pressure": 622.0641118555219,
+      "step": 6,
+      "strokes": 1225.4509803921571
+     },
+     {
+      "pressure": 593.7810551468956,
+      "step": 7,
+      "strokes": 1423.1568627450984
+     },
+     {
+      "pressure": 565.4979984382693,
+      "step": 8,
+      "strokes": 1620.8627450980396
+     },
+     {
+      "pressure": 537.214941729643,
+      "step": 9,
+      "strokes": 1818.5686274509808
+     },
+     {
+      "pressure": 491.3265306122449,
+      "step": 10,
+      "strokes": 2016.274509803922
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 39.21568627450981,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": 18.825086813461894,
+      "md": 2000.0,
+      "name": "Bottom of DP vertical",
+      "pressure": 767.9988662131519,
+      "strokes": 387.4509803921569,
+      "tvd": 2000.0
+     },
+     {
+      "linear_minus_section": 24.84049481143245,
+      "md": 5000.0,
+      "name": "Bottom of DP build",
+      "pressure": 667.219387755102,
+      "strokes": 909.8039215686276,
+      "tvd": 4500.0
+     },
+     {
+      "linear_minus_section": -13.900086762861406,
+      "md": 10800.0,
+      "name": "Bottom of DP tangent",
+      "pressure": 522.7494331065759,
+      "strokes": 1919.6862745098042,
+      "tvd": 8200.0
+     },
+     {
+      "linear_minus_section": -7.515639747915429,
+      "md": 11400.0,
+      "name": "Bottom of HWDP",
+      "pressure": 507.0379818594104,
+      "strokes": 1971.0980392156866,
+      "tvd": 8600.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 12000.0,
+      "name": "Bottom of DC",
+      "pressure": 491.3265306122449,
+      "strokes": 2016.274509803922,
+      "tvd": 9000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 2151.4117647058824,
+     "bit_to_surface": 5688.470588235295,
+     "string": 1977.0588235294122,
+     "surface_line": 39.21568627450981,
+     "surface_to_bit": 2016.274509803922,
+     "total_circulation": 7704.745098039216
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 219.44400000000002,
+     "bit_to_surface": 580.224,
+     "string": 201.66000000000003,
+     "surface_line": 4.0,
+     "surface_to_bit": 205.66000000000003,
+     "total_circulation": 785.884
+    },
+    "warnings": [
+     {
+      "code": "linear_overbalance",
+      "level": "info",
+      "message": "A straight line from ICP to FCP would hold up to 25 psi more drill pipe pressure than the section schedule. That adds the same amount to bottom-hole pressure and to the shoe load."
+     },
+     {
+      "code": "linear_underbalance",
+      "level": "bad",
+      "message": "A straight line from ICP to FCP would run up to 14 psi below the section schedule (underbalanced). Use the section schedule."
+     },
+     {
+      "code": "influx_along_hole",
+      "level": "info",
+      "message": "Influx height is measured along hole. In an inclined bottom section the vertical height is shorter, so the gradient is less reliable."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x OH"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 4400,
+      "name": "DP x OH"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 7000,
+      "name": "DP x csg"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 7000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 2000,
+      "capacity": 0.01776,
+      "length": 2000,
+      "name": "DP vertical"
+     },
+     {
+      "bottom_tvd": 4500,
+      "capacity": 0.01776,
+      "length": 3000,
+      "name": "DP build"
+     },
+     {
+      "bottom_tvd": 8200,
+      "capacity": 0.01776,
+      "length": 5800,
+      "name": "DP tangent"
+     },
+     {
+      "bottom_tvd": 8600,
+      "capacity": 0.00874,
+      "length": 600,
+      "name": "HWDP"
+     },
+     {
+      "bottom_tvd": 9000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "DC"
+     }
+    ],
+    "surface_line_volume": 4.0,
+    "units": "imperial",
+    "well_md": 12000,
+    "well_tvd": 9000
+   },
+   "name": "j_well_linear",
+   "result": {
+    "barite": {
+     "final_volume": 622.2222222222222,
+     "lb_per_bbl": 54.44444444444436,
+     "sacks": 326.6666666666661,
+     "sacks_rounded_up": 327,
+     "total_lb": 32666.666666666613,
+     "volume_increase": 22.222222222222186,
+     "volume_increase_per_bbl": 0.03703703703703698
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 5688.470588235295,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 256.8248366013072,
+     "first_strokes": 7704.745098039216,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 491.3265306122449,
+     "second_phase1_minutes": 67.2091503267974,
+     "second_phase1_strokes": 2016.274509803922,
+     "second_phase2_minutes": 189.6156862745098,
+     "second_phase2_strokes": 5688.470588235295
+    },
+    "fcp": 491.3265306122449,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x OH",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.7,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.654700854700856,
+    "kmw_round_increment": 0.1,
+    "kmw_rounded": 10.7,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -18.344531207305863,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1185.6000000000001,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 71.71372549019608,
+     "bit_to_surface": 189.6156862745098,
+     "string": 65.90196078431374,
+     "surface_line": 1.3071895424836601,
+     "surface_to_bit": 67.2091503267974,
+     "total_circulation": 256.8248366013072
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 39.21568627450981
+     },
+     {
+      "pressure": 814.1326530612245,
+      "step": 1,
+      "strokes": 236.92156862745102
+     },
+     {
+      "pressure": 778.2653061224489,
+      "step": 2,
+      "strokes": 434.62745098039227
+     },
+     {
+      "pressure": 742.3979591836735,
+      "step": 3,
+      "strokes": 632.3333333333335
+     },
+     {
+      "pressure": 706.530612244898,
+      "step": 4,
+      "strokes": 830.0392156862747
+     },
+     {
+      "pressure": 670.6632653061224,
+      "step": 5,
+      "strokes": 1027.745098039216
+     },
+     {
+      "pressure": 634.795918367347,
+      "step": 6,
+      "strokes": 1225.4509803921571
+     },
+     {
+      "pressure": 598.9285714285714,
+      "step": 7,
+      "strokes": 1423.1568627450984
+     },
+     {
+      "pressure": 563.0612244897959,
+      "step": 8,
+      "strokes": 1620.8627450980396
+     },
+     {
+      "pressure": 527.1938775510204,
+      "step": 9,
+      "strokes": 1818.5686274509808
+     },
+     {
+      "pressure": 491.3265306122449,
+      "step": 10,
+      "strokes": 2016.274509803922
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 39.21568627450981,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -3.3971354087603913,
+      "md": 2000.0,
+      "name": "Bottom of DP vertical",
+      "pressure": 790.2210884353742,
+      "strokes": 387.4509803921569,
+      "tvd": 1500.0
+     },
+     {
+      "linear_minus_section": -8.492838521900808,
+      "md": 5000.0,
+      "name": "Bottom of DP build",
+      "pressure": 700.5527210884353,
+      "strokes": 909.8039215686276,
+      "tvd": 3750.0
+     },
+     {
+      "linear_minus_section": -18.344531207305863,
+      "md": 10800.0,
+      "name": "Bottom of DP tangent",
+      "pressure": 527.1938775510204,
+      "strokes": 1919.6862745098042,
+      "tvd": 8100.0
+     },
+     {
+      "linear_minus_section": -9.737861970137658,
+      "md": 11400.0,
+      "name": "Bottom of HWDP",
+      "pressure": 509.26020408163265,
+      "strokes": 1971.0980392156866,
+      "tvd": 8550.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 12000.0,
+      "name": "Bottom of DC",
+      "pressure": 491.3265306122449,
+      "strokes": 2016.274509803922,
+      "tvd": 9000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 2151.4117647058824,
+     "bit_to_surface": 5688.470588235295,
+     "string": 1977.0588235294122,
+     "surface_line": 39.21568627450981,
+     "surface_to_bit": 2016.274509803922,
+     "total_circulation": 7704.745098039216
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 219.44400000000002,
+     "bit_to_surface": 580.224,
+     "string": 201.66000000000003,
+     "surface_line": 4.0,
+     "surface_to_bit": 205.66000000000003,
+     "total_circulation": 785.884
+    },
+    "warnings": [
+     {
+      "code": "consider_deviated",
+      "level": "info",
+      "message": "Well MD exceeds TVD by more than 2 percent. The straight-line schedule overstates drill pipe pressure in a deviated well. Consider deviated mode."
+     },
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 18 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     },
+     {
+      "code": "influx_along_hole",
+      "level": "info",
+      "message": "Influx height is measured along hole. In an inclined bottom section the vertical height is shorter, so the gradient is less reliable."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 95.3923769568,
+    "annulus": [
+     {
+      "capacity": 0.0151997696004,
+      "length": 182.88,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.023941984374000004,
+      "length": 1036.3200000000002,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.026883875264400003,
+      "length": 1828.8000000000002,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 1737.4831960950012,
+    "omw": 1174.298987705587,
+    "pit_gain": 2.38480942392,
+    "pump_output": 0.016216704082656,
+    "scr_pressure": 3102.6407819257624,
+    "shoe_md": 1828.8000000000002,
+    "shoe_tvd": 1828.8000000000002,
+    "sicp": 4136.854375901016,
+    "sidpp": 2757.9029172673445,
+    "string": [
+     {
+      "bottom_tvd": 2700.5280000000002,
+      "capacity": 0.009263826633600002,
+      "length": 2700.5280000000002,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 2865.1200000000003,
+      "capacity": 0.0045588876564000005,
+      "length": 164.592,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 3048.0,
+      "capacity": 0.0040059790848,
+      "length": 182.88,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0.0,
+    "units": "metric",
+    "well_md": 3048.0,
+    "well_tvd": 3048.0
+   },
+   "name": "metric_example",
+   "result": {
+    "barite": {
+     "final_volume": 619.638194631862,
+     "lb_per_bbl": 48.113576848061854,
+     "sacks": 288.6814610883711,
+     "sacks_rounded_up": 289,
+     "total_lb": 28868.14610883711,
+     "volume_increase": 19.63819463186198,
+     "volume_increase_per_bbl": 0.03273032438643664
+    },
+    "deviated": false,
+    "drillers": {
+     "first_bottoms_up_strokes": 4733.176470588237,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 212.2435294117648,
+     "first_strokes": 6367.305882352944,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 486.673331054005,
+     "second_phase1_minutes": 54.470980392156875,
+     "second_phase1_strokes": 1634.1294117647062,
+     "second_phase2_minutes": 157.7725490196079,
+     "second_phase2_strokes": 4733.176470588237
+    },
+    "fcp": 486.673331054005,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x open hole",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.598663654065,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.56923076923077,
+    "kmw_round_increment": 0.08345404452019332,
+    "kmw_rounded": 10.598663654065,
+    "linear_excess_max": 0.0,
+    "linear_excess_min": -21.087218188604083,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1217.21693993172,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 56.7137254901961,
+     "bit_to_surface": 157.7725490196079,
+     "string": 54.470980392156875,
+     "surface_line": 0.0,
+     "surface_to_bit": 54.470980392156875,
+     "total_circulation": 212.2435294117648
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 0.0
+     },
+     {
+      "pressure": 813.6673331054005,
+      "step": 1,
+      "strokes": 163.4129411764706
+     },
+     {
+      "pressure": 777.3346662108011,
+      "step": 2,
+      "strokes": 326.8258823529412
+     },
+     {
+      "pressure": 741.0019993162015,
+      "step": 3,
+      "strokes": 490.23882352941183
+     },
+     {
+      "pressure": 704.669332421602,
+      "step": 4,
+      "strokes": 653.6517647058824
+     },
+     {
+      "pressure": 668.3366655270025,
+      "step": 5,
+      "strokes": 817.0647058823531
+     },
+     {
+      "pressure": 632.003998632403,
+      "step": 6,
+      "strokes": 980.4776470588237
+     },
+     {
+      "pressure": 595.6713317378035,
+      "step": 7,
+      "strokes": 1143.8905882352942
+     },
+     {
+      "pressure": 559.338664843204,
+      "step": 8,
+      "strokes": 1307.3035294117649
+     },
+     {
+      "pressure": 523.0059979486045,
+      "step": 9,
+      "strokes": 1470.7164705882356
+     },
+     {
+      "pressure": 486.673331054005,
+      "step": 10,
+      "strokes": 1634.1294117647062
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 0.0,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": -21.087218188604083,
+      "md": 8860.0,
+      "name": "Bottom of 5 in DP 19.5 lb/ft",
+      "pressure": 528.0925713138485,
+      "strokes": 1542.6823529411768,
+      "tvd": 8860.0
+     },
+     {
+      "linear_minus_section": -11.755220263665763,
+      "md": 9400.0,
+      "name": "Bottom of 5 in HWDP",
+      "pressure": 508.4729311907647,
+      "strokes": 1588.9529411764709,
+      "tvd": 9400.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 10000.0,
+      "name": "Bottom of 6-1/2 in DC",
+      "pressure": 486.673331054005,
+      "strokes": 1634.1294117647062,
+      "tvd": 10000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 1701.411764705883,
+     "bit_to_surface": 4733.176470588237,
+     "string": 1634.1294117647062,
+     "surface_line": 0.0,
+     "surface_to_bit": 1634.1294117647062,
+     "total_circulation": 6367.305882352944
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 173.544,
+     "bit_to_surface": 482.78400000000005,
+     "string": 166.6812,
+     "surface_line": 0.0,
+     "surface_to_bit": 166.6812,
+     "total_circulation": 649.4652000000001
+    },
+    "warnings": [
+     {
+      "code": "linear_underbalance",
+      "level": "info",
+      "message": "The string is tapered: the straight-line schedule runs up to 21 psi below the hydrostatic section points (bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points."
+     }
+    ]
+   }
+  },
+  {
+   "input": {
+    "active_volume": 95.3923769568,
+    "annulus": [
+     {
+      "capacity": 0.0151997696004,
+      "length": 182.88,
+      "name": "DC x OH"
+     },
+     {
+      "capacity": 0.023941984374000004,
+      "length": 1341.1200000000001,
+      "name": "DP x OH"
+     },
+     {
+      "capacity": 0.026883875264400003,
+      "length": 2133.6,
+      "name": "DP x csg"
+     }
+    ],
+    "deviated": true,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 1737.4831960950012,
+    "omw": 1174.298987705587,
+    "pit_gain": 2.38480942392,
+    "pump_output": 0.016216704082656,
+    "scr_pressure": 3102.6407819257624,
+    "shoe_md": 2133.6,
+    "shoe_tvd": 1828.8000000000002,
+    "sicp": 4136.854375901016,
+    "sidpp": 2757.9029172673445,
+    "string": [
+     {
+      "bottom_tvd": 609.6,
+      "capacity": 0.009263826633600002,
+      "length": 609.6,
+      "name": "DP vertical"
+     },
+     {
+      "bottom_tvd": 1371.6000000000001,
+      "capacity": 0.009263826633600002,
+      "length": 914.4000000000001,
+      "name": "DP build"
+     },
+     {
+      "bottom_tvd": 2499.36,
+      "capacity": 0.009263826633600002,
+      "length": 1767.8400000000001,
+      "name": "DP tangent"
+     },
+     {
+      "bottom_tvd": 2621.28,
+      "capacity": 0.0045588876564000005,
+      "length": 182.88,
+      "name": "HWDP"
+     },
+     {
+      "bottom_tvd": 2743.2000000000003,
+      "capacity": 0.0040059790848,
+      "length": 182.88,
+      "name": "DC"
+     }
+    ],
+    "surface_line_volume": 0.635949179712,
+    "units": "metric",
+    "well_md": 3657.6000000000004,
+    "well_tvd": 2743.2000000000003
+   },
+   "name": "metric_j_well",
+   "result": {
+    "barite": {
+     "final_volume": 621.7646673583992,
+     "lb_per_bbl": 53.323435028077895,
+     "sacks": 319.94061016846734,
+     "sacks_rounded_up": 320,
+     "total_lb": 31994.061016846736,
+     "volume_increase": 21.76466735839914,
+     "volume_increase_per_bbl": 0.0362744455973319
+    },
+    "deviated": true,
+    "drillers": {
+     "first_bottoms_up_strokes": 5688.470588235295,
+     "first_hold_dp_pressure": 850.0,
+     "first_minutes": 256.82483660130725,
+     "first_strokes": 7704.745098039218,
+     "second_hold_casing_pressure": 400.0,
+     "second_hold_dp_pressure": 490.50540452686215,
+     "second_phase1_minutes": 67.20915032679741,
+     "second_phase1_strokes": 2016.2745098039222,
+     "second_phase2_minutes": 189.6156862745098,
+     "second_phase2_strokes": 5688.470588235295
+    },
+    "fcp": 490.50540452686215,
+    "icp": 850.0,
+    "influx": {
+     "gradient": 0.12106666666666677,
+     "height": 514.7563486616335,
+     "sections": [
+      {
+       "height": 514.7563486616335,
+       "name": "DC x OH",
+       "volume": 15.0
+      }
+     ],
+     "type": "gas"
+    },
+    "kmw": 10.682117698585,
+    "kmw_basis": "rounded",
+    "kmw_exact": 10.654700854700856,
+    "kmw_round_increment": 0.08345404452019332,
+    "kmw_rounded": 10.682117698585,
+    "linear_excess_max": 24.82105180311305,
+    "linear_excess_min": -13.942083660831429,
+    "lot_emw": 14.5,
+    "lot_source": "emw",
+    "maasp_kmw": 1191.17927804148,
+    "maasp_omw": 1466.3999999999996,
+    "minutes": {
+     "bit_to_shoe": 71.71372549019611,
+     "bit_to_surface": 189.6156862745098,
+     "string": 65.90196078431374,
+     "surface_line": 1.3071895424836604,
+     "surface_to_bit": 67.20915032679741,
+     "total_circulation": 256.82483660130725
+    },
+    "schedule": [
+     {
+      "pressure": 850.0,
+      "step": 0,
+      "strokes": 39.215686274509814
+     },
+     {
+      "pressure": 803.3672672095003,
+      "step": 1,
+      "strokes": 236.92156862745105
+     },
+     {
+      "pressure": 758.7415414260075,
+      "step": 2,
+      "strokes": 434.6274509803923
+     },
+     {
+      "pressure": 720.5197195464187,
+      "step": 3,
+      "strokes": 632.3333333333335
+     },
+     {
+      "pressure": 682.29789766683,
+      "step": 4,
+      "strokes": 830.0392156862748
+     },
+     {
+      "pressure": 649.9586825319169,
+      "step": 5,
+      "strokes": 1027.745098039216
+     },
+     {
+      "pressure": 621.5979286168443,
+      "step": 6,
+      "strokes": 1225.4509803921571
+     },
+     {
+      "pressure": 593.2371747017718,
+      "step": 7,
+      "strokes": 1423.1568627450986
+     },
+     {
+      "pressure": 564.8764207866992,
+      "step": 8,
+      "strokes": 1620.8627450980398
+     },
+     {
+      "pressure": 536.5156668716266,
+      "step": 9,
+      "strokes": 1818.5686274509808
+     },
+     {
+      "pressure": 490.50540452686215,
+      "step": 10,
+      "strokes": 2016.2745098039222
+     }
+    ],
+    "section_points": [
+     {
+      "linear_minus_section": 0.0,
+      "md": 0.0,
+      "name": "Surface (KMW at drill pipe)",
+      "pressure": 850.0,
+      "strokes": 39.215686274509814,
+      "tvd": 0.0
+     },
+     {
+      "linear_minus_section": 18.81730961013409,
+      "md": 2000.0,
+      "name": "Bottom of DP vertical",
+      "pressure": 767.8620118655881,
+      "strokes": 387.45098039215696,
+      "tvd": 2000.0
+     },
+     {
+      "linear_minus_section": 24.82105180311305,
+      "md": 5000.0,
+      "name": "Bottom of DP build",
+      "pressure": 666.8772518861925,
+      "strokes": 909.8039215686277,
+      "tvd": 4500.0
+     },
+     {
+      "linear_minus_section": -13.942083660831429,
+      "md": 10800.0,
+      "name": "Bottom of DP tangent",
+      "pressure": 522.0104196297315,
+      "strokes": 1919.6862745098044,
+      "tvd": 8200.0
+     },
+     {
+      "linear_minus_section": -7.537933040177052,
+      "md": 11400.0,
+      "name": "Bottom of HWDP",
+      "pressure": 506.25791207829684,
+      "strokes": 1971.0980392156869,
+      "tvd": 8600.0
+     },
+     {
+      "linear_minus_section": 0.0,
+      "md": 12000.0,
+      "name": "Bottom of DC",
+      "pressure": 490.50540452686215,
+      "strokes": 2016.2745098039222,
+      "tvd": 9000.0
+     }
+    ],
+    "strokes": {
+     "bit_to_shoe": 2151.4117647058833,
+     "bit_to_surface": 5688.470588235295,
+     "string": 1977.0588235294124,
+     "surface_line": 39.215686274509814,
+     "surface_to_bit": 2016.2745098039222,
+     "total_circulation": 7704.745098039218
+    },
+    "units": "imperial",
+    "volumes": {
+     "bit_to_shoe": 219.44400000000007,
+     "bit_to_surface": 580.2239999999999,
+     "string": 201.66000000000003,
+     "surface_line": 4.0,
+     "surface_to_bit": 205.66000000000003,
+     "total_circulation": 785.884
+    },
+    "warnings": [
+     {
+      "code": "linear_overbalance",
+      "level": "info",
+      "message": "A straight line from ICP to FCP would hold up to 25 psi more drill pipe pressure than the section schedule. That adds the same amount to bottom-hole pressure and to the shoe load."
+     },
+     {
+      "code": "linear_underbalance",
+      "level": "bad",
+      "message": "A straight line from ICP to FCP would run up to 14 psi below the section schedule (underbalanced). Use the section schedule."
+     },
+     {
+      "code": "influx_along_hole",
+      "level": "info",
+      "message": "Influx height is measured along hole. In an inclined bottom section the vertical height is shorter, so the gradient is less reliable."
+     }
+    ]
+   }
+  },
+  {
+   "error": "Shoe MD is deeper than the well MD (TD). Check the shoe and well depths.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 10500,
+    "shoe_tvd": 9500,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_shoe_below_td"
+  },
+  {
+   "error": "Pump output must be greater than zero. A zero pump output makes every stroke count infinite.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_zero_pump"
+  },
+  {
+   "error": "SIDPP cannot be negative.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": -50,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_negative_sidpp"
+  },
+  {
+   "error": "SICP cannot be negative.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": -1,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_negative_sicp"
+  },
+  {
+   "error": "Drill string section lengths add to 9140.0 ft but the well MD is 10000.0 ft. They must match (bit on bottom).",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8000,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_string_length"
+  },
+  {
+   "error": "Well TVD cannot be greater than well MD.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10500
+   },
+   "name": "err_tvd_gt_md"
+  },
+  {
+   "error": "Pit gain is larger than the whole annular volume. Check the pit gain and annular capacities.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 900,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_gain_too_big"
+  },
+  {
+   "error": "Enter the LOT/FIT as an EMW, or as a surface leak-off pressure plus the test mud weight.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": null,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_no_lot"
+  },
+  {
+   "error": "LOT/FIT EMW must be greater than the original mud weight. As entered the shoe is already at or past leak-off.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 9.0,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_lot_below_mw"
+  },
+  {
+   "error": "Drill string section 2 (5 in HWDP) bottom TVD is missing or not a number.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": true,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": null,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_dev_missing_tvd"
+  },
+  {
+   "error": "5 in HWDP: bottom TVD is shallower than the section above it.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": true,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 8000,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_dev_tvd_reverse"
+  },
+  {
+   "error": "SIDPP is not a number: 'abc'.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": "abc",
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_nan"
+  },
+  {
+   "error": "kmw_basis must be 'rounded' or 'exact'.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "nearest",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_bad_basis"
+  },
+  {
+   "error": "Original mud weight 30.00 ppg is outside the 5 to 25 ppg range this tool accepts.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 30,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_mw_range"
+  },
+  {
+   "error": "deviated must be true or false.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": "no",
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_deviated_string"
+  },
+  {
+   "error": "LOT/FIT EMW 145.00 ppg is above 25 ppg. Check the LOT/FIT entry (a misplaced decimal point overstates MAASP).",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 145,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": 10000,
+    "well_tvd": 10000
+   },
+   "name": "err_lot_emw_typo"
+  },
+  {
+   "error": "Well MD is not a number: '10_000'.",
+   "input": {
+    "active_volume": 600,
+    "annulus": [
+     {
+      "capacity": 0.02914,
+      "length": 600,
+      "name": "DC x open hole"
+     },
+     {
+      "capacity": 0.0459,
+      "length": 3400,
+      "name": "DP/HWDP x open hole"
+     },
+     {
+      "capacity": 0.05154,
+      "length": 6000,
+      "name": "DP x casing"
+     }
+    ],
+    "deviated": false,
+    "kill_rate_spm": 30,
+    "kmw_basis": "rounded",
+    "lot_emw": 14.5,
+    "omw": 9.8,
+    "pit_gain": 15,
+    "pump_output": 0.102,
+    "scr_pressure": 450,
+    "shoe_md": 6000,
+    "shoe_tvd": 6000,
+    "sicp": 600,
+    "sidpp": 400,
+    "string": [
+     {
+      "bottom_tvd": 8860,
+      "capacity": 0.01776,
+      "length": 8860,
+      "name": "5 in DP 19.5 lb/ft"
+     },
+     {
+      "bottom_tvd": 9400,
+      "capacity": 0.00874,
+      "length": 540,
+      "name": "5 in HWDP"
+     },
+     {
+      "bottom_tvd": 10000,
+      "capacity": 0.00768,
+      "length": 600,
+      "name": "6-1/2 in DC"
+     }
+    ],
+    "surface_line_volume": 0,
+    "units": "imperial",
+    "well_md": "10_000",
+    "well_tvd": 10000
+   },
+   "name": "err_underscore_number"
+  }
+ ],
+ "generator": "tests/make_vectors.py"
+}

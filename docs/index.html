@@ -1,0 +1,1577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'none'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Surface-stack kill sheet: kill mud weight, ICP, FCP, strokes, Wait and Weight schedule, MAASP, influx and barite. Training and cross-check aid. Runs in your browser.">
+<title>Kill Sheet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Public+Sans:wght@400;600&family=Red+Hat+Mono:wght@400;600&display=swap">
+<style>
+/* Field Tools v3, No. 03 Kill Sheet: the printed surface BOP kill sheet form. Dark: the remote choke panel at night. */
+:root {
+  --bg: #e4e5e7; --surface: #ffffff; --surface-2: #fbe7e5; --hair: #c9c4c4; --line: #5c5f63;
+  --fg: #111214; --muted: #45484d; --accent: #111214; --accent-ink: #ffffff;
+  --mark: #b0121b; --good: #1a6633; --warn: #8a4b00; --bad: #8f0f16; --field: #ffffff;
+  --chart-1: #111214; --chart-2: #b0121b; --chart-3: #5c5f63; --chart-4: #1f5aa6; --chart-grid: #d9dadd;
+  --display: "Archivo Narrow", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", "DejaVu Sans Condensed", sans-serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+  --mono: "Red Hat Mono", ui-monospace, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141517; --surface: #1d1f22; --surface-2: #2b1c1e; --hair: #34373b; --line: #7d8289;
+  --fg: #f2f2ee; --muted: #b6b9bd; --accent: #f2f2ee; --accent-ink: #141517;
+  --mark: #ff5d55; --good: #72d38f; --warn: #f0b44c; --bad: #ff9c8c; --field: #101113;
+  --chart-1: #f2f2ee; --chart-2: #ff5d55; --chart-3: #9aa0a6; --chart-4: #82b6ff; --chart-grid: #34373b;
+  --display: "Archivo Narrow", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", "DejaVu Sans Condensed", sans-serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+  --mono: "Red Hat Mono", ui-monospace, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #141517; --surface: #1d1f22; --surface-2: #2b1c1e; --hair: #34373b; --line: #7d8289;
+  --fg: #f2f2ee; --muted: #b6b9bd; --accent: #f2f2ee; --accent-ink: #141517;
+  --mark: #ff5d55; --good: #72d38f; --warn: #f0b44c; --bad: #ff9c8c; --field: #101113;
+  --chart-1: #f2f2ee; --chart-2: #ff5d55; --chart-3: #9aa0a6; --chart-4: #82b6ff; --chart-grid: #34373b;
+  --display: "Archivo Narrow", "Arial Narrow", "Liberation Sans Narrow", "Nimbus Sans Narrow", "DejaVu Sans Condensed", sans-serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+  --mono: "Red Hat Mono", ui-monospace, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.5; margin: 0; }
+.wrap {
+  max-width: 1000px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 40px;
+  display: grid; gap: 16px; counter-reset: box;
+}
+.wrap > * { min-width: 0; }
+
+/* Header: red printed form band, then the form title over a 2 px rule */
+header { display: grid; gap: 6px; }
+.band {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px;
+  background: var(--mark); color: var(--accent-ink);
+  font: 700 15px/1.3 var(--display); text-transform: uppercase; letter-spacing: .06em;
+  padding: 9px 16px; margin: 0 -16px 8px;
+}
+h1 { font: 700 2.4rem/1 var(--display); text-transform: uppercase; letter-spacing: .01em; margin: 0; border-bottom: 2px solid var(--fg); padding-bottom: 6px; }
+h2 { font: 700 1.5rem/1.1 var(--display); text-transform: uppercase; letter-spacing: .03em; margin: 0; }
+h3 { font: 700 15px/1.3 var(--display); text-transform: uppercase; letter-spacing: .05em; margin: 0; color: var(--fg); display: flex; align-items: center; gap: 8px; }
+.lede { margin: 0; color: var(--muted); max-width: 70ch; }
+
+/* Safety block: the printed caution box on the form. Full red frame and a reversed red heading strip. */
+.safety { border: 2px solid var(--bad); background: var(--surface); display: grid; gap: 0; }
+.safety p { margin: 0; padding: 10px 14px 12px; }
+.safety b { display: block; background: var(--bad); color: var(--accent-ink); font: 700 16px/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; padding: 7px 14px; }
+
+/* Form panels */
+.panel { background: var(--surface); border: 1.5px solid var(--fg); border-radius: 0; padding: 16px; display: grid; gap: 14px; }
+.panel > * { min-width: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+.row > * { min-width: 0; }
+.head-row { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--fg); padding-bottom: 8px; }
+.tag { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--line); padding: 2px 8px; }
+label { font: 700 14px/1.3 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--fg); display: grid; gap: 5px; }
+label .u { font: 400 12px var(--mono); text-transform: none; letter-spacing: 0; color: var(--muted); }
+input, select, button, textarea { font: inherit; color: var(--fg); }
+input[type="text"], select {
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 0;
+  font-family: var(--body); font-size: 16px; text-transform: none; letter-spacing: 0; font-weight: 400;
+  padding: 8px 10px; min-height: 44px; min-width: 0; width: 100%;
+}
+input.num { font: 600 18px var(--mono); font-variant-numeric: tabular-nums; }
+input[type="file"] { font: 400 16px var(--body); text-transform: none; letter-spacing: 0; min-height: 44px; max-width: 100%; }
+input[type="file"]::file-selector-button { font: 700 14px var(--display); text-transform: uppercase; letter-spacing: .04em; min-height: 44px; padding: 0 12px; margin-right: 10px; border: 1.5px solid var(--fg); border-radius: 0; background: var(--surface); color: var(--fg); cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button { cursor: pointer; border-radius: 0; min-height: 44px; padding: 8px 14px; border: 1.5px solid var(--fg); background: var(--surface); font: 700 14px var(--display); text-transform: uppercase; letter-spacing: .04em; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+button.small { padding: 6px 10px; min-width: 44px; }
+.seg { display: inline-flex; border: 1.5px solid var(--fg); }
+.seg button { border: 0; background: var(--surface); padding: 8px 14px; }
+.seg button + button { border-left: 1.5px solid var(--fg); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.check { display: flex; gap: 10px; align-items: center; min-height: 44px; font: 400 16px/1.45 var(--body); text-transform: none; letter-spacing: 0; color: var(--fg); }
+.check input { width: 22px; height: 22px; flex: none; accent-color: var(--accent); margin: 0; }
+
+/* Numbered form boxes: every section and every answer carries its line number */
+fieldset { position: relative; border: 1.5px solid var(--fg); border-radius: 0; padding: 12px; margin: 0; min-width: 0; display: grid; gap: 10px; align-content: start; background: var(--surface); }
+fieldset > * { min-width: 0; }
+fieldset, .panel, .wrap { grid-template-columns: minmax(0, 1fr); }
+#results > * { min-width: 0; }
+legend { font: 700 15px var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--fg); padding: 0 8px 0 0; display: flex; align-items: center; gap: 8px; }
+legend::before, .tile::before, #results h3::before {
+  counter-increment: box; content: counter(box);
+  display: inline-grid; place-items: center; width: 28px; height: 28px; flex: none;
+  background: var(--fg); color: var(--surface); font: 600 13px var(--mono); letter-spacing: 0;
+}
+#warn-box h3::before { content: none; counter-increment: none; }
+.fieldgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 12px; align-items: end; }
+.fieldgrid > * { min-width: 0; }
+.sets { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
+.sets > * { min-width: 0; }
+.help { margin: 0; font-size: 16px; line-height: 1.5; color: var(--muted); max-width: 72ch; }
+
+/* Form tables: black header rule, hairline columns */
+.scroll { overflow-x: auto; position: relative; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+.data { border: 1.5px solid var(--fg); background: var(--surface); }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+td { border-right: 1px solid var(--hair); }
+td:last-child { border-right: 0; }
+.data td { font-size: 16px; }
+th { background: var(--fg); color: var(--surface); font: 700 13px var(--display); letter-spacing: .05em; text-transform: uppercase; }
+th .u { color: var(--surface); font-size: 11px; }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.sections { min-width: 560px; border: 1.5px solid var(--fg); }
+.sections td { padding: 4px 4px; }
+.sections td.c-name { width: 40%; }
+.sections td.c-x { width: 54px; text-align: right; }
+.sections tfoot td { border-bottom: 0; border-top: 1.5px solid var(--fg); font: 600 14px var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); padding: 8px; }
+.sections tfoot td.off { color: var(--bad); }
+.data { min-width: 420px; }
+tr.hl td { font-weight: 600; background: var(--surface-2); }
+
+.status { font-size: 16px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 0; margin: 0; }
+.status.bad { color: var(--bad); border: 2px solid var(--bad); font-weight: 600; }
+.status.ok { color: var(--muted); }
+.warns { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.warns li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; font-size: 16px; }
+.warns li > * { min-width: 0; }
+.chip { display: inline-block; font: 600 12px/1.6 var(--mono); letter-spacing: .06em; padding: 1px 8px; border: 1.5px solid currentColor; border-radius: 0; white-space: nowrap; text-transform: uppercase; }
+.chip.good { color: var(--good); } .chip.warn { color: var(--warn); } .chip.bad { color: var(--bad); } .chip.info { color: var(--muted); }
+
+/* Answer boxes. The kill mud weight box is the one box drawn heavier than the rest. */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px; }
+.tile { position: relative; background: var(--surface); border: 1.5px solid var(--fg); padding: 10px 12px 12px 40px; display: grid; gap: 2px; align-content: start; min-width: 0; }
+.tile::before { position: absolute; left: 0; top: 0; }
+.tile .k { font: 700 14px/28px var(--display); text-transform: uppercase; letter-spacing: .05em; margin-top: -10px; }
+.tile .v { font: 600 24px/1.2 var(--mono); font-variant-numeric: tabular-nums; }
+.tile .v small { font: 400 14px var(--mono); color: var(--muted); margin-left: 6px; }
+.tile .s { font: 400 13px/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.tile.key { border: 3px solid var(--mark); padding: 9px 11px 11px 38px; }
+.tile.key::before { left: -1.5px; top: -1.5px; }
+.tile.key .v { font-size: 30px; }
+.split { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.split > * { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; }
+
+/* Chart: drill pipe pressure schedule on the form's plot box */
+.chartbox { border: 1.5px solid var(--fg); background: var(--field); padding: 6px; }
+.chartbox svg { display: block; width: 100%; min-width: 520px; height: auto; }
+.chartbox .axis { stroke: var(--line); stroke-width: 1.5; }
+.chartbox .grid { stroke: var(--chart-grid); }
+.chartbox text { fill: var(--muted); font-family: var(--mono); font-size: 12px; }
+.chartbox text.val { fill: var(--fg); font-weight: 600; }
+.chartbox .sched { fill: none; stroke: var(--chart-1); stroke-width: 2.5; }
+.chartbox .straight { fill: none; stroke: var(--chart-3); stroke-width: 1.5; stroke-dasharray: 6 4; }
+.chartbox .pt { fill: var(--chart-2); stroke: var(--field); stroke-width: 1.5; }
+.chartbox .step { fill: var(--chart-1); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); }
+.sw { display: inline-block; width: 16px; height: 3px; background: var(--chart-1); vertical-align: middle; margin-right: 6px; }
+.sw.dash { background: none; border-top: 2px dashed var(--chart-3); height: 0; }
+.sw.dot { width: 10px; height: 10px; border-radius: 50%; background: var(--chart-2); }
+
+.steps { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+.steps li { font-size: 16px; }
+.steps li::marker { font-family: var(--mono); font-weight: 600; }
+.steps .n { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+textarea.fallback { width: 100%; min-height: 160px; font: 13px var(--mono); text-transform: none; letter-spacing: 0; background: var(--surface-2); border: 1px solid var(--line); border-radius: 0; padding: 8px; }
+.method { display: grid; gap: 10px; max-width: 76ch; }
+.method p, .method li { margin: 0; font-size: 16px; }
+.method ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.method code { font-family: var(--mono); font-size: 14px; }
+.eq { display: block; font-family: var(--mono); font-size: 14px; background: var(--surface-2); border-left: 3px solid var(--fg); padding: 8px 12px; overflow-x: auto; white-space: pre; }
+details.panel { padding: 0 16px; gap: 0; }
+details.panel[open] { padding-bottom: 16px; }
+summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font: 700 16px var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--fg); }
+details[open] > summary { margin-bottom: 10px; border-bottom: 1.5px solid var(--fg); }
+footer { display: grid; gap: 4px; color: var(--muted); font-size: 16px; line-height: 1.5; }
+footer p { margin: 0; }
+footer .note { margin: 8px 0 8px; }
+.maker { font: 400 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.vh { position: absolute; left: 0; top: 0; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+@media (max-width: 480px) { h1 { font-size: 2.1rem; } .tile .v { font-size: 22px; } .tile.key .v { font-size: 28px; } .sets { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="band"><span>Surface BOP kill sheet</span><span>Field Tools Form 03</span></div>
+    <h1>Kill Sheet</h1>
+    <p class="lede">Surface-stack kill sheet for the Wait and Weight and Driller's methods: kill mud weight, ICP and FCP, strokes, the drill pipe pressure schedule, MAASP, influx type and barite.</p>
+  </header>
+
+  <section class="safety" aria-labelledby="safety-h">
+    <b id="safety-h">Training and cross-check aid</b>
+    <p>The rig's approved kill sheet and the well-site supervisor govern. Verify every input against the rig's own records and gauges before relying on any number here. This page does not replace well-control training or certification.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="in-h">
+    <div class="head-row">
+      <h2 id="in-h">Inputs</h2>
+      <span class="tag" id="example-tag">Example data</span>
+    </div>
+    <div class="row">
+      <label for="example-select">Example
+        <select id="example-select">
+          <option value="vertical">Vertical land well, 10,000 ft</option>
+          <option value="jwell">J-type deviated well, 12,000 ft MD</option>
+        </select>
+      </label>
+      <button type="button" id="load-example">Load example</button>
+      <div>
+        <span class="vh" id="units-label">Units</span>
+        <div class="seg" role="group" aria-labelledby="units-label">
+          <button type="button" id="units-imperial" aria-pressed="true">Oilfield</button>
+          <button type="button" id="units-metric" aria-pressed="false">Metric</button>
+        </div>
+      </div>
+      <label for="file-input">Load a case file (CSV or JSON)
+        <input type="file" id="file-input" accept=".csv,.tsv,.txt,.json,text/csv,text/plain,application/json">
+      </label>
+    </div>
+    <p class="status ok" id="file-status" role="status">Loaded: example data. Replace every value with your well's verified numbers.</p>
+
+    <div class="sets">
+      <fieldset>
+        <legend>Well and shoe</legend>
+        <div class="fieldgrid" id="grp-well"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Shut-in readings</legend>
+        <div class="fieldgrid" id="grp-shut"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Mud and shoe strength</legend>
+        <div class="fieldgrid" id="grp-mud"></div>
+        <label for="lot-mode">LOT/FIT entered as
+          <select id="lot-mode">
+            <option value="emw">Equivalent mud weight</option>
+            <option value="pressure">Surface leak-off pressure plus test mud weight</option>
+          </select>
+        </label>
+        <div class="fieldgrid" id="grp-lot"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Pump and weight-up</legend>
+        <div class="fieldgrid" id="grp-pump"></div>
+        <label for="kmw-basis">Kill mud weight used for FCP, MAASP and barite
+          <select id="kmw-basis">
+            <option value="rounded">Rounded up to next increment (default)</option>
+            <option value="exact">Exact calculated value</option>
+          </select>
+        </label>
+      </fieldset>
+    </div>
+
+    <fieldset>
+      <legend>Drill string, surface to bit</legend>
+      <label class="check" for="deviated"><input type="checkbox" id="deviated"> Deviated well: enter the TVD at the bottom of each string section</label>
+      <p class="help">Deviated mode builds the pressure schedule from the hydrostatic at each section bottom TVD instead of a straight line. Split long sections at the kickoff point and at the end of the build for an accurate schedule.</p>
+      <div class="scroll">
+        <table class="sections" id="tbl-string">
+          <thead><tr><th scope="col">Section</th><th scope="col" class="num">Length <span class="u" data-unit="len"></span></th><th scope="col" class="num">Capacity <span class="u" data-unit="cap"></span></th><th scope="col" class="num col-tvd">Bottom TVD <span class="u" data-unit="len"></span></th><th scope="col"><span class="vh">Remove</span></th></tr></thead>
+          <tbody></tbody>
+          <tfoot><tr><td>Total length</td><td class="num" id="sum-string"></td><td colspan="3"></td></tr></tfoot>
+        </table>
+      </div>
+      <div class="row"><button type="button" class="small" id="add-string">Add string section</button></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Annulus, bit to surface</legend>
+      <p class="help">List annular sections from the bit upward (for example DC x open hole, DP x open hole, DP x casing). Lengths must add to the well MD. Pit gain fills these sections in order from the bit.</p>
+      <div class="scroll">
+        <table class="sections" id="tbl-annulus">
+          <thead><tr><th scope="col">Section</th><th scope="col" class="num">Length <span class="u" data-unit="len"></span></th><th scope="col" class="num">Capacity <span class="u" data-unit="cap"></span></th><th scope="col"><span class="vh">Remove</span></th></tr></thead>
+          <tbody></tbody>
+          <tfoot><tr><td>Total length</td><td class="num" id="sum-annulus"></td><td colspan="2"></td></tr></tfoot>
+        </table>
+      </div>
+      <div class="row"><button type="button" class="small" id="add-annulus">Add annular section</button></div>
+    </fieldset>
+  </section>
+
+  <section class="panel" aria-labelledby="out-h" aria-live="polite">
+    <div class="head-row">
+      <h2 id="out-h">Kill sheet</h2>
+      <button type="button" class="primary" id="copy-csv">Copy results as CSV</button>
+    </div>
+    <p class="status bad" id="error" role="alert" hidden></p>
+    <div id="fallback-wrap" hidden>
+      <label for="csv-fallback">Clipboard is not available here. Select and copy the text below.
+        <textarea id="csv-fallback" class="fallback" readonly></textarea>
+      </label>
+    </div>
+    <p class="status ok" id="copy-msg" role="status" hidden></p>
+
+    <div id="results">
+      <div class="panel" style="padding:12px" id="warn-box" hidden>
+        <h3>Checks</h3>
+        <ul class="warns" id="warn-list"></ul>
+      </div>
+
+      <div class="tiles" style="margin-top:14px">
+        <div class="tile key"><span class="k">Kill mud weight</span><span class="v" id="t-kmw"></span><span class="s" id="t-kmw-s"></span></div>
+        <div class="tile"><span class="k">ICP</span><span class="v" id="t-icp"></span><span class="s">SCR pressure + SIDPP</span></div>
+        <div class="tile"><span class="k">FCP</span><span class="v" id="t-fcp"></span><span class="s">SCR pressure x KMW / OMW</span></div>
+        <div class="tile"><span class="k">MAASP</span><span class="v" id="t-maasp"></span><span class="s" id="t-maasp-s"></span></div>
+      </div>
+
+      <div class="split" style="margin-top:16px">
+        <div>
+          <h3>Volumes and strokes</h3>
+          <div class="scroll">
+            <table class="data" id="tbl-vol">
+              <thead><tr><th scope="col">Interval</th><th scope="col" class="num">Volume <span class="u" data-unit="vol"></span></th><th scope="col" class="num">Strokes</th><th scope="col" class="num">Minutes</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="help" id="vol-note"></p>
+        </div>
+        <div>
+          <h3>Wait and Weight schedule</h3>
+          <div class="scroll">
+            <table class="data" id="tbl-sched">
+              <thead><tr><th scope="col">Step</th><th scope="col" class="num">Strokes</th><th scope="col" class="num">Drill pipe pressure <span class="u" data-unit="pres"></span></th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="help" id="sched-note"></p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:grid; gap:8px">
+        <h3>Drill pipe pressure while KMW goes down the string</h3>
+        <div class="legend">
+          <span><span class="sw"></span>Schedule to follow</span>
+          <span><span class="sw dot"></span>Hydrostatic point at each section bottom</span>
+          <span id="lg-straight"><span class="sw dash"></span>Straight line ICP to FCP</span>
+        </div>
+        <div class="scroll chartbox" id="chart"></div>
+      </div>
+
+      <div style="margin-top:16px; display:grid; gap:8px">
+        <h3>Section points</h3>
+        <div class="scroll">
+          <table class="data" id="tbl-pts" style="min-width:560px">
+            <thead><tr><th scope="col">Point</th><th scope="col" class="num">MD <span class="u" data-unit="len"></span></th><th scope="col" class="num">TVD <span class="u" data-unit="len"></span></th><th scope="col" class="num">Strokes</th><th scope="col" class="num">Pressure <span class="u" data-unit="pres"></span></th><th scope="col" class="num">Straight minus point</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="help">A positive last column means the straight line holds more pressure than the hydrostatic point (extra bottom-hole pressure). A negative value means the straight line runs below it (bottom-hole pressure dips under formation pressure by that amount).</p>
+      </div>
+
+      <div class="split" style="margin-top:16px">
+        <div>
+          <h3>Driller's method</h3>
+          <ol class="steps" id="drillers"></ol>
+        </div>
+        <div>
+          <h3>Influx</h3>
+          <div id="influx"></div>
+          <h3 style="margin-top:12px">Barite weight-up</h3>
+          <div id="barite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Will Whitmire. Runs entirely in your browser; nothing you enter is uploaded.</p>
+    <p class="maker">W. Whitmire / Field Tools / No. 03</p>
+    <p class="note">Training and cross-check aid only. The rig's approved kill sheet and the well-site supervisor govern. Not affiliated with any training body, operator or app vendor.</p>
+    <details class="panel" id="method">
+      <summary>Method and limits</summary>
+      <div class="method">
+        <p>Standard surface-stack kill sheet formulas as taught in IADC WellSharp and IWCF well-control courses. Oilfield units throughout; metric input is converted first and results are converted back for display. Constant 0.052 psi/ft per ppg.</p>
+        <code class="eq">KMW = OMW + SIDPP / (0.052 x TVD)              rounded up to the next 0.1 ppg (10 kg/m3 in metric)
+ICP = SCR pressure + SIDPP
+FCP = SCR pressure x KMW / OMW</code>
+        <p><b>Volumes.</b> Each section is length x capacity. Surface to bit adds the surface line volume. Bit to shoe is the annular volume over the open hole length (well MD minus shoe MD). Strokes = volume / pump output. Minutes = strokes / kill rate.</p>
+        <p><b>Wait and Weight schedule, vertical.</b> Straight line from ICP at the start (after surface lines) to FCP at surface-to-bit strokes, in 10 equal stroke steps.</p>
+        <code class="eq">P(step i) = ICP - (ICP - FCP) x i / 10</code>
+        <p><b>Wait and Weight schedule, deviated.</b> At the bottom of each string section (measured depth md, true vertical depth tvd), with KMW filling the string down to that point:</p>
+        <code class="eq">P = ICP - SIDPP x (tvd / TVD) + (FCP - SCR) x (md / MD)</code>
+        <p>The first term removes static overbalance as the KMW column grows in vertical height. The second adds the extra friction of heavier mud in proportion to the length filled. The 10-step table is read off straight lines between these points. When every section TVD equals its MD this reduces exactly to the vertical straight line. The section points are also shown for vertical wells; in a tapered string they sit off the straight line (a well-known effect), and the table reports the difference.</p>
+        <p><b>Driller's method.</b> First circulation: original mud, hold drill pipe pressure at ICP at the kill rate until the influx is out (at least one full circulation). Shut in; SICP should equal SIDPP. Second circulation: pump KMW, hold casing pressure constant at the shut-in value until KMW reaches the bit, then hold drill pipe pressure at FCP until KMW is at surface.</p>
+        <code class="eq">MAASP = (LOT EMW - MW) x 0.052 x shoe TVD
+LOT EMW from a test = test MW + leak-off surface pressure / (0.052 x shoe TVD)</code>
+        <p><b>Influx.</b> Height comes from filling the annulus from the bit upward with the pit gain, spilling into the next section when one fills. Gradient and type:</p>
+        <code class="eq">influx gradient = 0.052 x OMW - (SICP - SIDPP) / height
+gas below 0.25 psi/ft; oil, condensate or mixed 0.25 to 0.40; water above 0.40</code>
+        <p><b>Barite</b> at SG 4.2 (35.0 ppg), 100 lb sacks:</p>
+        <code class="eq">barite lb/bbl = 1470 x (KMW - OMW) / (35 - KMW)
+volume increase per bbl = (KMW - OMW) / (35 - KMW)</code>
+        <p><b>Limits.</b></p>
+        <ul>
+          <li>Surface BOP stack only. No subsea choke line friction, no riser margin.</li>
+          <li>Single-bubble, static view. Gas expansion, migration and temperature are not modeled. MAASP is a static figure at the shoe and changes as soon as KMW passes the shoe.</li>
+          <li>Influx type is indicative only. It is distorted by inaccurate pit gain, washed-out hole, mixed influx, a float in the string, influx in the string, and inclination near bottom (height here is along hole).</li>
+          <li>FCP from KMW / OMW assumes friction scales with mud weight only. Rheology changes, and SCR taken at a different depth or mud, are not corrected.</li>
+          <li>The bit is assumed on bottom: string and annular lengths must each add to the well MD within 1 ft.</li>
+          <li>Barite figures assume clean weighting of the active volume only. No dilution, no trip margin, no safety margin is added to KMW.</li>
+          <li>Inputs outside 5 to 25 ppg, negative pressures, zero pump output, shoe below TD, and section lengths that do not close are refused. Unusual but possible readings (such as SICP below SIDPP) are flagged, not refused.</li>
+        </ul>
+      </div>
+    </details>
+  </footer>
+</div>
+
+<script id="core">
+"use strict";
+// Kill Sheet core. Pure functions, no DOM. Mirrors src/kill_sheet/core.py and parse.py.
+var KillSheetCore = (function () {
+  var G = 0.052;
+  var BARITE_PPG = 35.0;
+  var BARITE_LB_PER_BBL = 1470.0;
+  var SACK_LB = 100.0;
+  var FT_M = 0.3048;
+  var PPG_KGM3 = 119.82642731689663;
+  var PSI_KPA = 6.894757293168361;
+  var BBL_M3 = 0.158987294928;
+  var BBLFT_M3M = BBL_M3 / FT_M;
+  var LENGTH_TOL_FT = 1.0;
+  var MW_MIN_PPG = 5.0;
+  var MW_MAX_PPG = 25.0;
+  var SCHEDULE_STEPS = 10;
+  var MAX_BYTES = 5 * 1024 * 1024;
+  var MAX_ROWS = 50000;
+  var WELL_KEYS = ["well_md", "well_tvd", "shoe_md", "shoe_tvd", "omw", "sidpp", "sicp",
+    "pit_gain", "scr_pressure", "kill_rate_spm", "pump_output"];
+  var LABELS = {
+    well_md: "Well MD", well_tvd: "Well TVD", shoe_md: "Shoe MD", shoe_tvd: "Shoe TVD",
+    omw: "Original mud weight", lot_emw: "LOT/FIT EMW", lot_pressure: "LOT/FIT surface pressure",
+    lot_test_mw: "LOT/FIT test mud weight", sidpp: "SIDPP", sicp: "SICP", pit_gain: "Pit gain",
+    scr_pressure: "Slow circulating rate pressure", kill_rate_spm: "Kill rate",
+    pump_output: "Pump output", surface_line_volume: "Surface line volume",
+    active_volume: "Active system volume", kmw_round_increment: "KMW rounding increment"
+  };
+
+  function InputError(msg) {
+    var e = new Error(msg);
+    e.isInputError = true;
+    return e;
+  }
+  function label(k) { return Object.prototype.hasOwnProperty.call(LABELS, k) ? LABELS[k] : k; }
+  function isBlank(v) { return v === undefined || v === null || (typeof v === "string" && v.trim() === ""); }
+  function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function f1(x) { return x.toFixed(1); }
+  function f2(x) { return x.toFixed(2); }
+  function f0(x) { return x.toFixed(0); }
+
+  function num(value, lab) {
+    if (typeof value === "boolean" || value === null || value === undefined) throw InputError(lab + " is missing or not a number.");
+    if (typeof value === "string") {
+      var s = value.trim();
+      if (s === "") throw InputError(lab + " is missing.");
+      var low = s.toLowerCase();
+      var v0 = (/^[+-]?(\d+\.?\d*|\.\d+)(e[+-]?\d+)?$/i.test(s)) ? Number(s) :
+        (/^[+-]?(nan|inf|infinity)$/.test(low) ? NaN : undefined);
+      if (v0 === undefined) throw InputError(lab + " is not a number: '" + s + "'.");
+      value = v0;
+    }
+    if (typeof value !== "number") throw InputError(lab + " is not a number.");
+    if (!isFinite(value)) throw InputError(lab + " must be a finite number.");
+    return value;
+  }
+
+  function get(c, key, required, dflt) {
+    if (!has(c, key) || isBlank(c[key])) {
+      if (required) throw InputError(label(key) + " is required.");
+      return dflt;
+    }
+    return num(c[key], label(key));
+  }
+
+  function copySections(v) {
+    if (!Array.isArray(v)) return v;
+    return v.map(function (s) {
+      if (s === null || typeof s !== "object" || Array.isArray(s)) return s;
+      var o = {};
+      Object.keys(s).forEach(function (k) { o[k] = s[k]; });
+      return o;
+    });
+  }
+
+  function toImperial(c0) {
+    if (c0 === null || typeof c0 !== "object" || Array.isArray(c0)) throw InputError("Input must be an object of named fields.");
+    var units = has(c0, "units") ? c0.units : "imperial";
+    if (units !== "imperial" && units !== "metric") throw InputError("units must be 'imperial' or 'metric'.");
+    var out = {};
+    Object.keys(c0).forEach(function (k) { out[k] = c0[k]; });
+    out.string = copySections(c0.string);
+    out.annulus = copySections(c0.annulus);
+    out.units = "imperial";
+    if (units === "imperial") return out;
+    function conv(key, factor) {
+      if (has(c0, key) && !isBlank(c0[key])) out[key] = num(c0[key], label(key)) / factor;
+    }
+    ["well_md", "well_tvd", "shoe_md", "shoe_tvd"].forEach(function (k) { conv(k, FT_M); });
+    ["omw", "lot_emw", "lot_test_mw"].forEach(function (k) { conv(k, PPG_KGM3); });
+    ["sidpp", "sicp", "scr_pressure", "lot_pressure"].forEach(function (k) { conv(k, PSI_KPA); });
+    ["pit_gain", "surface_line_volume", "active_volume", "pump_output"].forEach(function (k) { conv(k, BBL_M3); });
+    if (has(c0, "kmw_round_increment") && c0.kmw_round_increment !== null && c0.kmw_round_increment !== undefined) conv("kmw_round_increment", PPG_KGM3);
+    else out.kmw_round_increment = 10.0 / PPG_KGM3;
+    ["string", "annulus"].forEach(function (lk) {
+      if (!Array.isArray(out[lk])) return;
+      out[lk].forEach(function (sec, i) {
+        if (sec === null || typeof sec !== "object" || Array.isArray(sec)) return;
+        var where = lk + " section " + (i + 1);
+        if (sec.length !== null && sec.length !== undefined) sec.length = num(sec.length, where + " length") / FT_M;
+        if (sec.capacity !== null && sec.capacity !== undefined) sec.capacity = num(sec.capacity, where + " capacity") / BBLFT_M3M;
+        if (!isBlank(sec.bottom_tvd)) sec.bottom_tvd = num(sec.bottom_tvd, where + " bottom TVD") / FT_M;
+      });
+    });
+    return out;
+  }
+
+  function sections(raw, kind, deviated) {
+    var lab = kind === "string" ? "Drill string" : "Annulus";
+    if (!Array.isArray(raw) || raw.length === 0) throw InputError(lab + " needs at least one section.");
+    return raw.map(function (sec, i) {
+      var where = lab + " section " + (i + 1);
+      if (sec === null || typeof sec !== "object" || Array.isArray(sec)) throw InputError(where + " must have a name, length and capacity.");
+      var dflt = "Section " + (i + 1);
+      var name = String(sec.name ? sec.name : dflt).trim().slice(0, 60) || dflt;
+      var length = num(sec.length, where + " (" + name + ") length");
+      var cap = num(sec.capacity, where + " (" + name + ") capacity");
+      if (length <= 0) throw InputError(where + " (" + name + ") length must be greater than zero.");
+      if (cap <= 0) throw InputError(where + " (" + name + ") capacity must be greater than zero.");
+      var item = { name: name, length: length, capacity: cap };
+      if (kind === "string" && deviated) item.bottom_tvd = num(sec.bottom_tvd, where + " (" + name + ") bottom TVD");
+      return item;
+    });
+  }
+
+  function warn(list, code, level, message) { list.push({ code: code, level: level, message: message }); }
+
+  function kmwRoundUp(kmw, increment) {
+    var n = Math.ceil(kmw / increment - 1e-6); // float noise within 1e-6 of an increment does not round up
+    return Math.round(n * increment * 1e12) / 1e12;
+  }
+
+  function influxFill(pitGain, annulus) {
+    var remaining = pitGain, height = 0, parts = [];
+    for (var i = 0; i < annulus.length; i++) {
+      var sec = annulus[i];
+      if (remaining <= 0) break;
+      var secVol = sec.length * sec.capacity;
+      if (remaining <= secVol) {
+        var h = remaining / sec.capacity;
+        parts.push({ name: sec.name, height: h, volume: remaining });
+        height += h;
+        remaining = 0;
+        break;
+      }
+      parts.push({ name: sec.name, height: sec.length, volume: secVol });
+      height += sec.length;
+      remaining -= secVol;
+    }
+    if (remaining > 1e-9) throw InputError("Pit gain is larger than the whole annular volume. Check the pit gain and annular capacities.");
+    return { height: height, parts: parts };
+  }
+
+  function classifyInflux(g) {
+    if (g < 0.25) return "gas";
+    if (g <= 0.4) return "oil, condensate or mixed";
+    return "water";
+  }
+
+  function annularVolumeBetween(annulus, fromBottom, toBottom) {
+    var vol = 0, base = 0;
+    annulus.forEach(function (sec) {
+      var top = base + sec.length;
+      var lo = Math.max(base, fromBottom), hi = Math.min(top, toBottom);
+      if (hi > lo) vol += (hi - lo) * sec.capacity;
+      base = top;
+    });
+    return vol;
+  }
+
+  function sum(arr, fn) { var s = 0; arr.forEach(function (x) { s += fn(x); }); return s; }
+
+  function compute(caseIn) {
+    var c = toImperial(caseIn);
+    var warnings = [];
+    var deviated = has(c, "deviated") ? c.deviated : false;
+    if (deviated === null || deviated === undefined) deviated = false;
+    if (typeof deviated !== "boolean") throw InputError("deviated must be true or false.");
+    var basis = has(c, "kmw_basis") && c.kmw_basis !== undefined ? c.kmw_basis : "rounded";
+    if (basis !== "rounded" && basis !== "exact") throw InputError("kmw_basis must be 'rounded' or 'exact'.");
+
+    var v = {};
+    WELL_KEYS.forEach(function (k) { v[k] = get(c, k, true); });
+    var md = v.well_md, tvd = v.well_tvd, shoeMd = v.shoe_md, shoeTvd = v.shoe_tvd;
+    var omw = v.omw, sidpp = v.sidpp, sicp = v.sicp;
+    var scr = v.scr_pressure, spm = v.kill_rate_spm, pump = v.pump_output, pitGain = v.pit_gain;
+    var lineVol = get(c, "surface_line_volume", false, 0.0);
+    var active = get(c, "active_volume", false, null);
+    var inc = get(c, "kmw_round_increment", false, 0.1);
+
+    [["well_md", md], ["well_tvd", tvd], ["shoe_md", shoeMd], ["shoe_tvd", shoeTvd]].forEach(function (p) {
+      if (p[1] <= 0) throw InputError(LABELS[p[0]] + " must be greater than zero.");
+    });
+    if (tvd > md + 1e-6) throw InputError("Well TVD cannot be greater than well MD.");
+    if (shoeTvd > shoeMd + 1e-6) throw InputError("Shoe TVD cannot be greater than shoe MD.");
+    if (shoeMd > md + 1e-6) throw InputError("Shoe MD is deeper than the well MD (TD). Check the shoe and well depths.");
+    if (shoeTvd > tvd + 1e-6) throw InputError("Shoe TVD is deeper than the well TVD. Check the shoe and well depths.");
+    if (!(MW_MIN_PPG <= omw && omw <= MW_MAX_PPG)) throw InputError("Original mud weight " + f2(omw) + " ppg is outside the " + f0(MW_MIN_PPG) + " to " + f0(MW_MAX_PPG) + " ppg range this tool accepts.");
+    [["sidpp", sidpp], ["sicp", sicp], ["pit_gain", pitGain], ["surface_line_volume", lineVol]].forEach(function (p) {
+      if (p[1] < 0) throw InputError(LABELS[p[0]] + " cannot be negative.");
+    });
+    if (scr <= 0) throw InputError("Slow circulating rate pressure must be greater than zero.");
+    if (spm <= 0) throw InputError("Kill rate must be greater than zero strokes per minute.");
+    if (pump <= 0) throw InputError("Pump output must be greater than zero. A zero pump output makes every stroke count infinite.");
+    if (inc <= 0) throw InputError("KMW rounding increment must be greater than zero.");
+    if (active !== null && active < 0) throw InputError("Active system volume cannot be negative.");
+
+    var lotEmw, lotSource;
+    if (has(c, "lot_emw") && !isBlank(c.lot_emw)) {
+      lotEmw = get(c, "lot_emw", true);
+      lotSource = "emw";
+    } else {
+      var lotP = get(c, "lot_pressure", false, null);
+      var lotMw = get(c, "lot_test_mw", false, null);
+      if (lotP === null || lotMw === null) throw InputError("Enter the LOT/FIT as an EMW, or as a surface leak-off pressure plus the test mud weight.");
+      if (lotP < 0) throw InputError("LOT/FIT surface pressure cannot be negative.");
+      if (!(MW_MIN_PPG <= lotMw && lotMw <= MW_MAX_PPG)) throw InputError("LOT/FIT test mud weight " + f2(lotMw) + " ppg is outside the " + f0(MW_MIN_PPG) + " to " + f0(MW_MAX_PPG) + " ppg range.");
+      lotEmw = lotMw + lotP / (G * shoeTvd);
+      lotSource = "pressure";
+    }
+    if (lotEmw > MW_MAX_PPG) throw InputError("LOT/FIT EMW " + f2(lotEmw) + " ppg is above " + f0(MW_MAX_PPG) + " ppg. Check the LOT/FIT entry (a misplaced decimal point overstates MAASP).");
+    if (lotEmw <= omw) throw InputError("LOT/FIT EMW must be greater than the original mud weight. As entered the shoe is already at or past leak-off.");
+
+    var string = sections(c.string, "string", deviated);
+    var annulus = sections(c.annulus, "annulus", false);
+    var sLen = sum(string, function (s) { return s.length; });
+    var aLen = sum(annulus, function (s) { return s.length; });
+    if (Math.abs(sLen - md) > LENGTH_TOL_FT) throw InputError("Drill string section lengths add to " + f1(sLen) + " ft but the well MD is " + f1(md) + " ft. They must match (bit on bottom).");
+    if (Math.abs(aLen - md) > LENGTH_TOL_FT) throw InputError("Annular section lengths add to " + f1(aLen) + " ft but the well MD is " + f1(md) + " ft. They must match.");
+    if (deviated) {
+      var prevTvd = 0, prevMd = 0, cum = 0;
+      string.forEach(function (s) {
+        cum += s.length;
+        if (s.bottom_tvd < 0) throw InputError(s.name + ": bottom TVD cannot be negative.");
+        if (s.bottom_tvd < prevTvd - 1e-6) throw InputError(s.name + ": bottom TVD is shallower than the section above it.");
+        if (s.bottom_tvd - prevTvd > (cum - prevMd) + 1e-6) throw InputError(s.name + ": TVD gained in the section is more than its length.");
+        prevTvd = s.bottom_tvd; prevMd = cum;
+      });
+      var lastTvd = string[string.length - 1].bottom_tvd;
+      if (Math.abs(lastTvd - tvd) > LENGTH_TOL_FT) throw InputError("The last string section bottom TVD (" + f1(lastTvd) + " ft) must equal the well TVD (" + f1(tvd) + " ft).");
+    }
+
+    if (sicp < sidpp) warn(warnings, "sicp_lt_sidpp", "warn",
+      "SICP is lower than SIDPP. This is unusual: check for a float or string influx, a plugged or washed gauge, " +
+      "trapped pressure, or an influx lighter than the annulus fluid being absent. Verify before using any number here.");
+    if (sidpp === 0 && sicp === 0) warn(warnings, "no_pressure", "warn",
+      "SIDPP and SICP are both zero. KMW equals the original mud weight. Confirm the well is static and the gauges read.");
+    else if (sidpp === 0) warn(warnings, "sidpp_zero", "warn",
+      "SIDPP is zero. If a float is in the string, SIDPP must be read by bumping the float before KMW can be trusted.");
+    if (!deviated && md - tvd > 0.02 * md) warn(warnings, "consider_deviated", "info",
+      "Well MD exceeds TVD by more than 2 percent. The straight-line schedule overstates drill pipe pressure in a deviated well. Consider deviated mode.");
+    if (pump > 1.0) warn(warnings, "pump_output_large", "warn", "Pump output above 1 bbl/stk is unusual. Check the units.");
+
+    var kmwExact = omw + sidpp / (G * tvd);
+    var kmwRounded = kmwRoundUp(kmwExact, inc);
+    var kmw = basis === "rounded" ? kmwRounded : kmwExact;
+    if (kmw >= BARITE_PPG) throw InputError("Kill mud weight is at or above the barite density (35 ppg). Check SIDPP and TVD.");
+    if (kmw > MW_MAX_PPG) warn(warnings, "kmw_high", "bad", "Kill mud weight is above " + f0(MW_MAX_PPG) + " ppg. Check SIDPP and TVD.");
+
+    var icp = scr + sidpp;
+    var fcp = scr * kmw / omw;
+
+    var stringVol = sum(string, function (s) { return s.length * s.capacity; });
+    var annVol = sum(annulus, function (s) { return s.length * s.capacity; });
+    var openHole = md - shoeMd;
+    var bitToShoeVol = annularVolumeBetween(annulus, 0.0, openHole);
+    var surfToBitVol = lineVol + stringVol;
+    var totalVol = surfToBitVol + annVol;
+    var volumes = {
+      surface_line: lineVol, string: stringVol, surface_to_bit: surfToBitVol,
+      bit_to_shoe: bitToShoeVol, bit_to_surface: annVol, total_circulation: totalVol
+    };
+    var strokes = {}, minutes = {};
+    Object.keys(volumes).forEach(function (k) { strokes[k] = volumes[k] / pump; minutes[k] = strokes[k] / spm; });
+
+    var lineStk = strokes.surface_line, bitStk = strokes.surface_to_bit;
+    var points = [{ name: "Surface (KMW at drill pipe)", md: 0.0, tvd: 0.0, strokes: lineStk, pressure: icp }];
+    var cumMd = 0, cumVol = lineVol;
+    string.forEach(function (s) {
+      cumMd += s.length;
+      cumVol += s.length * s.capacity;
+      var sTvd = deviated ? s.bottom_tvd : cumMd * tvd / md;
+      var p = icp - sidpp * (sTvd / tvd) + (fcp - scr) * (cumMd / md);
+      points.push({ name: "Bottom of " + s.name, md: cumMd, tvd: sTvd, strokes: cumVol / pump, pressure: p });
+    });
+    points[points.length - 1].pressure = fcp;
+    points[points.length - 1].strokes = bitStk;
+
+    function linearAt(stk) {
+      var f = (stk - lineStk) / (bitStk - lineStk);
+      return icp - (icp - fcp) * f;
+    }
+    function curveAt(stk) {
+      if (stk <= points[0].strokes) return points[0].pressure;
+      for (var i = 0; i + 1 < points.length; i++) {
+        var a = points[i], b = points[i + 1];
+        if (stk <= b.strokes) {
+          var span = b.strokes - a.strokes;
+          if (span <= 0) return b.pressure;
+          return a.pressure + (b.pressure - a.pressure) * (stk - a.strokes) / span;
+        }
+      }
+      return points[points.length - 1].pressure;
+    }
+
+    var schedule = [];
+    for (var i = 0; i <= SCHEDULE_STEPS; i++) {
+      var stk = lineStk + (bitStk - lineStk) * i / SCHEDULE_STEPS;
+      var p = deviated ? curveAt(stk) : linearAt(stk);
+      if (i === 0) p = icp;
+      if (i === SCHEDULE_STEPS) { p = fcp; stk = bitStk; }
+      schedule.push({ step: i, strokes: stk, pressure: p });
+    }
+
+    var sectionPoints = [], exMax = 0.0, exMin = 0.0;
+    points.forEach(function (pt) {
+      var ex = linearAt(pt.strokes) - pt.pressure;
+      var o = {};
+      Object.keys(pt).forEach(function (k) { o[k] = pt[k]; });
+      o.linear_minus_section = ex;
+      sectionPoints.push(o);
+      exMax = Math.max(exMax, ex);
+      exMin = Math.min(exMin, ex);
+    });
+    if (deviated && exMax > 5) warn(warnings, "linear_overbalance", "info",
+      "A straight line from ICP to FCP would hold up to " + f0(exMax) + " psi more drill pipe pressure than the section schedule. " +
+      "That adds the same amount to bottom-hole pressure and to the shoe load.");
+    if (exMin < -5) {
+      if (deviated) warn(warnings, "linear_underbalance", "bad",
+        "A straight line from ICP to FCP would run up to " + f0(-exMin) + " psi below the section schedule (underbalanced). Use the section schedule.");
+      else warn(warnings, "linear_underbalance", "info",
+        "The string is tapered: the straight-line schedule runs up to " + f0(-exMin) + " psi below the hydrostatic section points " +
+        "(bottom-hole pressure dips below formation pressure by that much while KMW goes down the string). Compare with the section points.");
+    }
+
+    var drillers = {
+      first_hold_dp_pressure: icp,
+      first_strokes: strokes.total_circulation,
+      first_minutes: minutes.total_circulation,
+      first_bottoms_up_strokes: strokes.bit_to_surface,
+      second_hold_casing_pressure: sidpp,
+      second_phase1_strokes: strokes.surface_to_bit,
+      second_phase1_minutes: minutes.surface_to_bit,
+      second_hold_dp_pressure: fcp,
+      second_phase2_strokes: strokes.bit_to_surface,
+      second_phase2_minutes: minutes.bit_to_surface
+    };
+
+    var maaspOmw = (lotEmw - omw) * G * shoeTvd;
+    var maaspKmw = (lotEmw - kmw) * G * shoeTvd;
+    if (kmw >= lotEmw) warn(warnings, "kmw_over_lot", "bad",
+      "Kill mud weight is at or above the shoe LOT/FIT EMW. Losses at the shoe are expected once KMW is in the annulus above the shoe. Stop and escalate.");
+    if (sicp >= maaspOmw) warn(warnings, "sicp_over_maasp", "bad",
+      "SICP is at or above MAASP for the current mud weight. The shoe may already be at risk. Escalate before circulating.");
+    else if (sicp >= 0.8 * maaspOmw) warn(warnings, "sicp_near_maasp", "warn", "SICP is within 20 percent of MAASP for the current mud weight.");
+
+    var influx = null;
+    if (pitGain === 0) {
+      warn(warnings, "no_pit_gain", "info", "Pit gain is zero, so influx height and gradient are not calculated.");
+    } else {
+      var fill = influxFill(pitGain, annulus);
+      var h = fill.height;
+      var grad = G * omw - (sicp - sidpp) / h;
+      influx = { height: h, gradient: grad, type: classifyInflux(grad), sections: fill.parts };
+      if (grad < 0) warn(warnings, "influx_gradient_negative", "warn",
+        "Calculated influx gradient is below zero, which is not physical. Check SICP, SIDPP, pit gain and annular capacity.");
+      else if (grad > G * omw) warn(warnings, "influx_gradient_heavy", "warn",
+        "Calculated influx gradient is heavier than the mud. Check SICP and SIDPP.");
+      if (md - tvd > 0.02 * md) warn(warnings, "influx_along_hole", "info",
+        "Influx height is measured along hole. In an inclined bottom section the vertical height is shorter, so the gradient is less reliable.");
+      if (h > openHole + 1e-9) warn(warnings, "influx_above_shoe", "warn", "Calculated influx height extends above the shoe.");
+    }
+
+    var lbPerBbl = BARITE_LB_PER_BBL * (kmw - omw) / (BARITE_PPG - kmw);
+    var volIncPerBbl = (kmw - omw) / (BARITE_PPG - kmw);
+    var barite = { lb_per_bbl: lbPerBbl, volume_increase_per_bbl: volIncPerBbl,
+      total_lb: null, sacks: null, sacks_rounded_up: null, volume_increase: null, final_volume: null };
+    if (active !== null && active > 0) {
+      var totalLb = lbPerBbl * active;
+      var sacks = totalLb / SACK_LB;
+      barite.total_lb = totalLb;
+      barite.sacks = sacks;
+      barite.sacks_rounded_up = Math.ceil(sacks - 1e-9);
+      barite.volume_increase = volIncPerBbl * active;
+      barite.final_volume = active * (1 + volIncPerBbl);
+    }
+
+    return {
+      units: "imperial", deviated: deviated, kmw_basis: basis,
+      kmw_exact: kmwExact, kmw_rounded: kmwRounded, kmw: kmw, kmw_round_increment: inc,
+      icp: icp, fcp: fcp, lot_emw: lotEmw, lot_source: lotSource,
+      volumes: volumes, strokes: strokes, minutes: minutes,
+      schedule: schedule, section_points: sectionPoints,
+      linear_excess_max: exMax, linear_excess_min: exMin,
+      drillers: drillers, maasp_omw: maaspOmw, maasp_kmw: maaspKmw,
+      influx: influx, barite: barite, warnings: warnings
+    };
+  }
+
+  // ---- Parsing (mirrors parse.py) ----
+  var SCALAR_KEYS = ["units", "well_md", "well_tvd", "shoe_md", "shoe_tvd", "omw", "lot_emw", "lot_pressure", "lot_test_mw",
+    "sidpp", "sicp", "pit_gain", "scr_pressure", "kill_rate_spm", "pump_output", "surface_line_volume",
+    "active_volume", "deviated", "kmw_basis", "kmw_round_increment", "label"];
+  var ALIASES = {
+    md: "well_md", tvd: "well_tvd", mw: "omw", mud_weight: "omw", original_mud_weight: "omw",
+    scr: "scr_pressure", scrp: "scr_pressure", spm: "kill_rate_spm", kill_rate: "kill_rate_spm",
+    pump: "pump_output", lot: "lot_emw", fit: "lot_emw", gain: "pit_gain",
+    surface_lines: "surface_line_volume", active: "active_volume"
+  };
+  var TEXT_KEYS = ["units", "kmw_basis", "label"];
+
+  function normKey(k) {
+    var s = k.trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+    return has(ALIASES, s) ? ALIASES[s] : s;
+  }
+  function split(line) {
+    var parts;
+    if (line.indexOf("\t") >= 0) parts = line.split("\t");
+    else if (line.indexOf(",") >= 0) parts = line.split(",");
+    else if (line.indexOf(";") >= 0) parts = line.split(";");
+    else parts = line.split(/\s+/);
+    return parts.map(function (p) { return p.trim(); });
+  }
+  function toNum(s, where) {
+    if (s === "") throw InputError(where + ": value is blank.");
+    var low = s.toLowerCase();
+    var v;
+    if (/^[+-]?(\d+\.?\d*|\.\d+)(e[+-]?\d+)?$/i.test(s)) v = Number(s);
+    else if (/^[+-]?(nan|inf|infinity)$/.test(low)) v = NaN;
+    else throw InputError(where + ": '" + s + "' is not a number.");
+    if (!isFinite(v)) throw InputError(where + ": value must be a finite number.");
+    return v;
+  }
+  function toBool(s, where) {
+    var t = s.trim().toLowerCase();
+    if (["1", "true", "yes", "y", "on"].indexOf(t) >= 0) return true;
+    if (["0", "false", "no", "n", "off", ""].indexOf(t) >= 0) return false;
+    throw InputError(where + ": expected yes or no, got '" + s + "'.");
+  }
+  function utf8Length(str) {
+    var n = 0;
+    for (var i = 0; i < str.length; i++) {
+      var code = str.charCodeAt(i);
+      if (code < 0x80) n += 1;
+      else if (code < 0x800) n += 2;
+      else if (code >= 0xd800 && code <= 0xdbff) { n += 4; i++; }
+      else n += 3;
+    }
+    return n;
+  }
+
+  // "sidpp,1,200" splits into 1 and 200: refuse it rather than read 1 psi.
+  function splitNumberMessage(where, a, b) {
+    return where + ": '" + a + "," + b + "' looks like one number split by a comma. Write it without the thousands comma (1200) and with a decimal point (10.5).";
+  }
+
+  function parseText(text) {
+    if (typeof text !== "string") throw InputError("Input must be text.");
+    if (utf8Length(text) > MAX_BYTES) throw InputError("File is larger than 5 MB.");
+    var stripped = text.replace(/^﻿+/, "").trim();
+    if (stripped === "") throw InputError("File is empty.");
+    if (stripped[0] === "{" || stripped[0] === "[") {
+      var data;
+      try { data = JSON.parse(stripped); } catch (e) { throw InputError("JSON could not be read."); }
+      if (data === null || typeof data !== "object" || Array.isArray(data)) throw InputError("JSON input must be an object of named fields.");
+      return data;
+    }
+    var lines = stripped.split(/\r\n|\r|\n/);
+    if (lines.length > MAX_ROWS) throw InputError("File has more than 50,000 rows.");
+    var c = { string: [], annulus: [] };
+    var seen = {};
+    for (var n = 1; n <= lines.length; n++) {
+      var line = lines[n - 1].trim();
+      if (line === "" || line[0] === "#") continue;
+      var parts = split(line);
+      var key = normKey(parts[0]);
+      var where = "Line " + n + " (" + parts[0] + ")";
+      if (n === 1 && ["field", "key", "parameter", "name"].indexOf(key) >= 0 && parts.length >= 2) continue;
+      if (key === "string" || key === "annulus") {
+        if (parts.length < 4) throw InputError(where + ": a " + key + " row needs name, length and capacity.");
+        var sec = { name: parts[1].slice(0, 60), length: toNum(parts[2], where + " length"), capacity: toNum(parts[3], where + " capacity") };
+        if (key === "string" && parts.length >= 5 && parts[4] !== "") sec.bottom_tvd = toNum(parts[4], where + " bottom TVD");
+        c[key].push(sec);
+        continue;
+      }
+      if (SCALAR_KEYS.indexOf(key) < 0) throw InputError(where + ": unknown field.");
+      if (has(seen, key)) throw InputError(where + ": field appears more than once.");
+      seen[key] = true;
+      if (parts.length < 2) throw InputError(where + ": value is missing.");
+      var val = parts[1];
+      if (TEXT_KEYS.indexOf(key) >= 0) c[key] = key !== "label" ? val.toLowerCase() : val.slice(0, 200);
+      else if (key === "deviated") c[key] = toBool(val, where);
+      else {
+        if (parts.length > 2 && /^[+-]?\d+$/.test(val) && /^\d+(\.\d*)?$/.test(parts[2])) throw InputError(splitNumberMessage(where, val, parts[2]));
+        c[key] = toNum(val, where);
+      }
+    }
+    if (c.string.length === 0) throw InputError("No drill string rows found (rows starting with 'string').");
+    if (c.annulus.length === 0) throw InputError("No annulus rows found (rows starting with 'annulus').");
+    return c;
+  }
+
+  return {
+    G: G, BARITE_PPG: BARITE_PPG, FT_M: FT_M, PPG_KGM3: PPG_KGM3, PSI_KPA: PSI_KPA, BBL_M3: BBL_M3, BBLFT_M3M: BBLFT_M3M,
+    MAX_BYTES: MAX_BYTES, MAX_ROWS: MAX_ROWS,
+    compute: compute, toImperial: toImperial, kmwRoundUp: kmwRoundUp, influxFill: influxFill,
+    classifyInflux: classifyInflux, parseText: parseText
+  };
+})();
+</script>
+
+<script id="ui">
+(function () {
+  "use strict";
+  var C = KillSheetCore;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // Unit kinds: [oilfield label, metric label, metric per oilfield unit]
+  var UNITS = {
+    len: ["ft", "m", C.FT_M],
+    mw: ["ppg", "kg/m3", C.PPG_KGM3],
+    pres: ["psi", "kPa", C.PSI_KPA],
+    vol: ["bbl", "m3", C.BBL_M3],
+    cap: ["bbl/ft", "m3/m", C.BBLFT_M3M],
+    pump: ["bbl/stk", "m3/stk", C.BBL_M3],
+    spm: ["spm", "spm", 1],
+    grad: ["psi/ft", "kPa/m", C.PSI_KPA / C.FT_M]
+  };
+
+  var FIELDS = [
+    ["grp-well", "well_md", "Well MD (TD)", "len"],
+    ["grp-well", "well_tvd", "Well TVD", "len"],
+    ["grp-well", "shoe_md", "Shoe MD", "len"],
+    ["grp-well", "shoe_tvd", "Shoe TVD", "len"],
+    ["grp-shut", "sidpp", "SIDPP", "pres"],
+    ["grp-shut", "sicp", "SICP", "pres"],
+    ["grp-shut", "pit_gain", "Pit gain", "vol"],
+    ["grp-mud", "omw", "Original mud weight", "mw"],
+    ["grp-lot", "lot_emw", "LOT/FIT EMW", "mw"],
+    ["grp-lot", "lot_pressure", "Leak-off surface pressure", "pres"],
+    ["grp-lot", "lot_test_mw", "Test mud weight", "mw"],
+    ["grp-pump", "scr_pressure", "SCR pressure at kill rate", "pres"],
+    ["grp-pump", "kill_rate_spm", "Kill rate", "spm"],
+    ["grp-pump", "pump_output", "Pump output", "pump"],
+    ["grp-pump", "surface_line_volume", "Surface line volume (optional)", "vol"],
+    ["grp-pump", "active_volume", "Active system volume (optional)", "vol"]
+  ];
+  var FIELD_KIND = {};
+  FIELDS.forEach(function (f) { FIELD_KIND[f[1]] = f[3]; });
+
+  var EXAMPLES = {
+    vertical: {
+      label: "Example data: vertical land well, 10,000 ft TVD, 8-1/2 in hole, 9-5/8 in shoe at 6,000 ft. Illustrative values.",
+      units: "imperial", well_md: 10000, well_tvd: 10000, shoe_md: 6000, shoe_tvd: 6000, omw: 9.8, lot_emw: 14.5,
+      sidpp: 400, sicp: 600, pit_gain: 15, scr_pressure: 450, kill_rate_spm: 30, pump_output: 0.102,
+      surface_line_volume: 0, active_volume: 600, deviated: false, kmw_basis: "rounded",
+      string: [
+        { name: "5 in DP 19.5 lb/ft", length: 8860, capacity: 0.01776, bottom_tvd: 8860 },
+        { name: "5 in HWDP", length: 540, capacity: 0.00874, bottom_tvd: 9400 },
+        { name: "6-1/2 in DC", length: 600, capacity: 0.00768, bottom_tvd: 10000 }
+      ],
+      annulus: [
+        { name: "DC x open hole", length: 600, capacity: 0.02914 },
+        { name: "DP/HWDP x open hole", length: 3400, capacity: 0.0459 },
+        { name: "DP x casing", length: 6000, capacity: 0.05154 }
+      ]
+    },
+    jwell: {
+      label: "Example data: J-type deviated well, 12,000 ft MD, 9,000 ft TVD. Illustrative values.",
+      units: "imperial", well_md: 12000, well_tvd: 9000, shoe_md: 7000, shoe_tvd: 6000, omw: 9.8, lot_emw: 14.5,
+      sidpp: 400, sicp: 600, pit_gain: 15, scr_pressure: 450, kill_rate_spm: 30, pump_output: 0.102,
+      surface_line_volume: 4, active_volume: 600, deviated: true, kmw_basis: "rounded",
+      string: [
+        { name: "DP vertical to KOP", length: 2000, capacity: 0.01776, bottom_tvd: 2000 },
+        { name: "DP build", length: 3000, capacity: 0.01776, bottom_tvd: 4500 },
+        { name: "DP tangent", length: 5800, capacity: 0.01776, bottom_tvd: 8200 },
+        { name: "HWDP", length: 600, capacity: 0.00874, bottom_tvd: 8600 },
+        { name: "DC", length: 600, capacity: 0.00768, bottom_tvd: 9000 }
+      ],
+      annulus: [
+        { name: "DC x open hole", length: 600, capacity: 0.02914 },
+        { name: "DP x open hole", length: 4400, capacity: 0.0459 },
+        { name: "DP x casing", length: 7000, capacity: 0.05154 }
+      ]
+    }
+  };
+
+  var units = "imperial";
+  var lastResult = null;
+  var lastCase = null;
+
+  function store(k, v) { try { localStorage.setItem("killsheet-ui-" + k, v); } catch (e) { /* storage unavailable */ } }
+  function recall(k) { try { return localStorage.getItem("killsheet-ui-" + k); } catch (e) { return null; } }
+
+  function u(kind) { return UNITS[kind][units === "metric" ? 1 : 0]; }
+  // Oilfield value to display units.
+  function disp(v, kind) { return units === "metric" ? v * UNITS[kind][2] : v; }
+  function fmt(v, d) {
+    if (v === null || v === undefined || !isFinite(v)) return "";
+    return v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function digits(kind) {
+    var m = units === "metric";
+    return { len: m ? 1 : 0, mw: m ? 0 : 2, pres: 0, vol: m ? 2 : 1, cap: m ? 5 : 5, pump: m ? 4 : 3, spm: 0, grad: 3 }[kind];
+  }
+  function show(v, kind, d) { return fmt(disp(v, kind), d === undefined ? digits(kind) : d); }
+  function inputText(v) {
+    if (v === null || v === undefined || v === "") return "";
+    var n = Number(v);
+    if (!isFinite(n)) return String(v);
+    return String(Number(n.toPrecision(8)));
+  }
+
+  function el(tag, attrs, text) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  // ---- Build scalar inputs ----
+  FIELDS.forEach(function (f) {
+    var id = "in-" + f[1];
+    var lab = el("label", { "for": id, id: "lab-" + f[1] });
+    var cap = el("span", null, f[2] + " ");
+    cap.appendChild(el("span", { "class": "u", "data-unit": f[3] }));
+    lab.appendChild(cap);
+    var inp = el("input", { type: "text", inputmode: "decimal", id: id, "class": "num", autocomplete: "off", spellcheck: "false" });
+    lab.appendChild(inp);
+    $(f[0]).appendChild(lab);
+    inp.addEventListener("input", recompute);
+  });
+
+  function refreshUnitLabels() {
+    document.querySelectorAll("[data-unit]").forEach(function (n) { n.textContent = "(" + u(n.getAttribute("data-unit")) + ")"; });
+    $("units-imperial").setAttribute("aria-pressed", String(units === "imperial"));
+    $("units-metric").setAttribute("aria-pressed", String(units === "metric"));
+  }
+
+  // ---- Section tables ----
+  function sectionRow(kind, sec, idx) {
+    var tr = el("tr");
+    var pre = kind + "-" + idx;
+    var tdName = el("td", { "class": "c-name" });
+    var ln = el("label", { "for": pre + "-name", "class": "vh" }, "Section " + (idx + 1) + " name");
+    var iname = el("input", { type: "text", id: pre + "-name", maxlength: "60", autocomplete: "off" });
+    iname.value = sec.name || "";
+    tdName.appendChild(ln); tdName.appendChild(iname);
+    tr.appendChild(tdName);
+    var cols = [["length", "len", "length"], ["capacity", "cap", "capacity"]];
+    if (kind === "string") cols.push(["bottom_tvd", "len", "bottom TVD"]);
+    cols.forEach(function (c) {
+      var td = el("td", { "class": "num" + (c[0] === "bottom_tvd" ? " col-tvd" : "") });
+      var lab = el("label", { "for": pre + "-" + c[0], "class": "vh" }, "Section " + (idx + 1) + " " + c[2]);
+      var inp = el("input", { type: "text", inputmode: "decimal", id: pre + "-" + c[0], "class": "num", autocomplete: "off", spellcheck: "false" });
+      inp.value = inputText(sec[c[0]]);
+      td.appendChild(lab); td.appendChild(inp);
+      tr.appendChild(td);
+    });
+    var tdx = el("td", { "class": "c-x" });
+    var bx = el("button", { type: "button", "class": "small", id: pre + "-remove", "aria-label": "Remove section " + (idx + 1) }, "x");
+    bx.addEventListener("click", function () {
+      var rows = readSections(kind);
+      if (rows.length <= 1) return;
+      rows.splice(idx, 1);
+      renderSections(kind, rows);
+      recompute();
+    });
+    tdx.appendChild(bx);
+    tr.appendChild(tdx);
+    tr.addEventListener("input", recompute);
+    return tr;
+  }
+
+  function renderSections(kind, rows) {
+    var tb = $("tbl-" + kind).querySelector("tbody");
+    clear(tb);
+    rows.forEach(function (s, i) { tb.appendChild(sectionRow(kind, s, i)); });
+    applyDeviatedVisibility();
+  }
+
+  // "10,000" in a box means ten thousand; drop commas only in real thousands groups.
+  // Anything else with a comma ("10,5") is passed through and refused by the core.
+  function uiNum(v) {
+    var t = String(v).trim();
+    return /^[+-]?\d{1,3}(,\d{3})+(\.\d*)?$/.test(t) ? t.replace(/,/g, "") : v;
+  }
+
+  function readSections(kind) {
+    var tb = $("tbl-" + kind).querySelector("tbody");
+    var out = [];
+    for (var i = 0; i < tb.rows.length; i++) {
+      var pre = kind + "-" + i;
+      var s = { name: $(pre + "-name").value, length: uiNum($(pre + "-length").value), capacity: uiNum($(pre + "-capacity").value) };
+      if (kind === "string") s.bottom_tvd = uiNum($(pre + "-bottom_tvd").value);
+      out.push(s);
+    }
+    return out;
+  }
+
+  function applyDeviatedVisibility() {
+    var dev = $("deviated").checked;
+    document.querySelectorAll("#tbl-string .col-tvd").forEach(function (n) { n.hidden = !dev; });
+  }
+
+  function applyLotMode() {
+    var mode = $("lot-mode").value;
+    $("lab-lot_emw").hidden = mode !== "emw";
+    $("lab-lot_pressure").hidden = mode !== "pressure";
+    $("lab-lot_test_mw").hidden = mode !== "pressure";
+  }
+
+  // ---- Read / write the whole form ----
+  function readCase() {
+    var c = { units: units, deviated: $("deviated").checked, kmw_basis: $("kmw-basis").value };
+    FIELDS.forEach(function (f) { c[f[1]] = uiNum($("in-" + f[1]).value); });
+    if ($("lot-mode").value === "emw") { c.lot_pressure = null; c.lot_test_mw = null; }
+    else { c.lot_emw = null; }
+    if (String(c.surface_line_volume).trim() === "") c.surface_line_volume = null;
+    if (String(c.active_volume).trim() === "") c.active_volume = null;
+    c.string = readSections("string");
+    c.annulus = readSections("annulus");
+    return c;
+  }
+
+  function writeCase(c) {
+    units = c.units === "metric" ? "metric" : "imperial";
+    store("units", units);
+    FIELDS.forEach(function (f) { $("in-" + f[1]).value = inputText(c[f[1]]); });
+    var byPressure = (c.lot_emw === undefined || c.lot_emw === null || c.lot_emw === "") &&
+      c.lot_pressure !== undefined && c.lot_pressure !== null;
+    $("lot-mode").value = byPressure ? "pressure" : "emw";
+    $("deviated").checked = c.deviated === true;
+    $("kmw-basis").value = c.kmw_basis === "exact" ? "exact" : "rounded";
+    renderSections("string", Array.isArray(c.string) ? c.string : []);
+    renderSections("annulus", Array.isArray(c.annulus) ? c.annulus : []);
+    applyLotMode();
+    refreshUnitLabels();
+  }
+
+  // The last conversion: what was in the form before and what the conversion wrote. Switching
+  // back restores the original text of every box that was not edited in between, so
+  // oilfield -> metric -> oilfield gives back exactly 9.8, not 9.8000001.
+  var unitMemo = null;
+  function flatCase(c) {
+    var out = {};
+    FIELDS.forEach(function (f) { out[f[1]] = c[f[1]]; });
+    ["string", "annulus"].forEach(function (k) {
+      c[k].forEach(function (s, i) { ["length", "capacity", "bottom_tvd"].forEach(function (q) { out[k + i + q] = s[q]; }); });
+    });
+    return out;
+  }
+
+  // Convert the values in the form between unit systems.
+  function convertForm(to) {
+    if (to === units) return;
+    var before = readCase();
+    var factor = function (kind) { return to === "metric" ? UNITS[kind][2] : 1 / UNITS[kind][2]; };
+    var conv = function (s, kind) {
+      var t = String(s).trim();
+      if (t === "") return s;
+      var n = Number(t);
+      if (!isFinite(n)) return s;
+      return inputText(n * factor(kind));
+    };
+    var c = readCase();
+    FIELDS.forEach(function (f) { if (c[f[1]] !== null) c[f[1]] = conv(c[f[1]], f[3]); });
+    c.string.forEach(function (s) { s.length = conv(s.length, "len"); s.capacity = conv(s.capacity, "cap"); s.bottom_tvd = conv(s.bottom_tvd, "len"); });
+    c.annulus.forEach(function (s) { s.length = conv(s.length, "len"); s.capacity = conv(s.capacity, "cap"); });
+    c.units = to;
+    if (unitMemo && unitMemo.units === to) {
+      var now = flatCase(before), made = unitMemo.made, orig = unitMemo.orig;
+      FIELDS.forEach(function (f) { var k = f[1]; if (now[k] === made[k] && k in orig) c[k] = orig[k]; });
+      ["string", "annulus"].forEach(function (kind) {
+        c[kind].forEach(function (s, i) {
+          ["length", "capacity", "bottom_tvd"].forEach(function (q) { var k = kind + i + q; if (now[k] === made[k] && k in orig) s[q] = orig[k]; });
+        });
+      });
+    }
+    writeCase(c);
+    unitMemo = { units: before.units, orig: flatCase(before), made: flatCase(readCase()) };
+  }
+
+  // ---- Results ----
+  function setTile(id, value, unit) {
+    var n = $(id);
+    clear(n);
+    n.appendChild(document.createTextNode(value));
+    n.appendChild(el("small", null, unit));
+  }
+
+  function sumLengths() {
+    ["string", "annulus"].forEach(function (k) {
+      var total = 0, ok = true;
+      readSections(k).forEach(function (s) { var n = Number(String(s.length).trim()); if (String(s.length).trim() === "" || !isFinite(n)) ok = false; else total += n; });
+      var md = Number(uiNum($("in-well_md").value));
+      var cell = $("sum-" + k);
+      cell.textContent = ok ? fmt(total, units === "metric" ? 1 : 0) + " " + u("len") : "check entries";
+      var off = !ok || !isFinite(md) || Math.abs(total - md) > (units === "metric" ? C.FT_M : 1);
+      cell.className = "num" + (off ? " off" : "");
+      if (ok && isFinite(md) && off) cell.textContent += "  (well MD " + fmt(md, units === "metric" ? 1 : 0) + ")";
+    });
+  }
+
+  function recompute() {
+    sumLengths();
+    applyDeviatedVisibility();
+    var c = readCase();
+    var r;
+    try {
+      r = C.compute(c);
+    } catch (e) {
+      lastResult = null;
+      $("error").textContent = e.isInputError ? e.message : "Unexpected error: " + e.message;
+      $("error").hidden = false;
+      $("results").hidden = true;
+      return;
+    }
+    $("error").hidden = true;
+    $("results").hidden = false;
+    lastResult = r;
+    lastCase = c;
+    render(r);
+  }
+
+  function render(r) {
+    // Warnings
+    var wl = $("warn-list");
+    clear(wl);
+    r.warnings.forEach(function (w) {
+      var li = el("li");
+      li.appendChild(el("span", { "class": "chip " + w.level }, w.level === "bad" ? "stop" : w.level));
+      li.appendChild(el("span", null, w.message));
+      wl.appendChild(li);
+    });
+    $("warn-box").hidden = r.warnings.length === 0;
+
+    var mwD = digits("mw");
+    var kmwD = units === "metric" ? 0 : (r.kmw_basis === "exact" ? 3 : 1);
+    setTile("t-kmw", show(r.kmw, "mw", kmwD), u("mw"));
+    $("t-kmw-s").textContent = "Exact " + show(r.kmw_exact, "mw", units === "metric" ? 1 : 3) + ", rounded up " +
+      show(r.kmw_rounded, "mw", units === "metric" ? 0 : 1) + ". Using " + (r.kmw_basis === "exact" ? "exact." : "rounded.");
+    setTile("t-icp", show(r.icp, "pres"), u("pres"));
+    setTile("t-fcp", show(r.fcp, "pres"), u("pres"));
+    setTile("t-maasp", show(r.maasp_omw, "pres"), u("pres"));
+    $("t-maasp-s").textContent = "At OMW. With KMW: " + show(r.maasp_kmw, "pres") + " " + u("pres") +
+      ". LOT/FIT EMW " + show(r.lot_emw, "mw", mwD) + " " + u("mw") + ".";
+
+    // Volumes
+    var tb = $("tbl-vol").querySelector("tbody");
+    clear(tb);
+    var rows = [["surface_line", "Surface lines"], ["string", "Drill string"], ["surface_to_bit", "Surface to bit"],
+      ["bit_to_shoe", "Bit to shoe"], ["bit_to_surface", "Bit to surface (annulus)"], ["total_circulation", "Total circulation"]];
+    rows.forEach(function (row) {
+      if (row[0] === "surface_line" && r.volumes.surface_line === 0) return;
+      var tr = el("tr", row[0] === "surface_to_bit" || row[0] === "total_circulation" ? { "class": "hl" } : null);
+      tr.appendChild(el("td", null, row[1]));
+      tr.appendChild(el("td", { "class": "num" }, show(r.volumes[row[0]], "vol")));
+      tr.appendChild(el("td", { "class": "num" }, fmt(r.strokes[row[0]], 0)));
+      tr.appendChild(el("td", { "class": "num" }, fmt(r.minutes[row[0]], 1)));
+      tb.appendChild(tr);
+    });
+    $("vol-note").textContent = "Strokes = volume / pump output. Minutes at the kill rate.";
+
+    // Schedule
+    var sb = $("tbl-sched").querySelector("tbody");
+    clear(sb);
+    r.schedule.forEach(function (s) {
+      var tr = el("tr", s.step === 0 || s.step === 10 ? { "class": "hl" } : null);
+      tr.appendChild(el("td", { "class": "num", style: "text-align:left" }, s.step === 0 ? "0 (ICP)" : s.step === 10 ? "10 (FCP)" : String(s.step)));
+      tr.appendChild(el("td", { "class": "num" }, fmt(s.strokes, 0)));
+      tr.appendChild(el("td", { "class": "num" }, show(s.pressure, "pres")));
+      sb.appendChild(tr);
+    });
+    var drop = r.schedule[0].pressure - r.schedule[r.schedule.length - 1].pressure;
+    var stepStk = (r.schedule[10].strokes - r.schedule[0].strokes) / 10;
+    $("sched-note").textContent = r.deviated
+      ? "Deviated mode: pressures read off the section points by strokes. Hold ICP over the surface lines first."
+      : "Drops " + show(drop / 10, "pres", 1) + " " + u("pres") + " every " + fmt(stepStk, 0) + " strokes. Hold FCP from the bit until KMW is back at surface.";
+
+    // Section points
+    var pb = $("tbl-pts").querySelector("tbody");
+    clear(pb);
+    r.section_points.forEach(function (p) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, p.name));
+      tr.appendChild(el("td", { "class": "num" }, show(p.md, "len")));
+      tr.appendChild(el("td", { "class": "num" }, show(p.tvd, "len")));
+      tr.appendChild(el("td", { "class": "num" }, fmt(p.strokes, 0)));
+      tr.appendChild(el("td", { "class": "num" }, show(p.pressure, "pres")));
+      var ex = disp(p.linear_minus_section, "pres");
+      tr.appendChild(el("td", { "class": "num" }, (ex > 0.5 ? "+" : "") + fmt(ex, 0)));
+      pb.appendChild(tr);
+    });
+
+    drawChart(r);
+
+    // Driller's
+    var d = r.drillers;
+    var ol = $("drillers");
+    clear(ol);
+    var step = function (parts) {
+      var li = el("li");
+      parts.forEach(function (p) { li.appendChild(typeof p === "string" ? document.createTextNode(p) : p); });
+      ol.appendChild(li);
+    };
+    var n = function (t) { return el("span", { "class": "n" }, t); };
+    step(["First circulation, original mud: bring the pump to the kill rate holding casing pressure at SICP, then hold drill pipe pressure at ",
+      n(show(d.first_hold_dp_pressure, "pres") + " " + u("pres")), " (ICP) until the influx is out. One circulation is ",
+      n(fmt(d.first_strokes, 0) + " strokes"), " (", n(fmt(d.first_minutes, 0) + " min"), ")."]);
+    step(["Shut in. SICP should read close to SIDPP (", n(show(d.second_hold_casing_pressure, "pres") + " " + u("pres")),
+      "). If it is higher, influx remains: circulate again."]);
+    step(["Second circulation, kill mud ", n(show(r.kmw, "mw", units === "metric" ? 0 : (r.kmw_basis === "exact" ? 3 : 1)) + " " + u("mw")),
+      ": hold casing pressure constant at the shut-in value for ", n(fmt(d.second_phase1_strokes, 0) + " strokes"),
+      " (", n(fmt(d.second_phase1_minutes, 0) + " min"), ") until KMW reaches the bit."]);
+    step(["Then hold drill pipe pressure at FCP ", n(show(d.second_hold_dp_pressure, "pres") + " " + u("pres")),
+      " for ", n(fmt(d.second_phase2_strokes, 0) + " strokes"), " (", n(fmt(d.second_phase2_minutes, 0) + " min"), ") until KMW is at surface. Shut in and confirm zero pressures."]);
+
+    // Influx
+    var inf = $("influx");
+    clear(inf);
+    if (!r.influx) {
+      inf.appendChild(el("p", { "class": "help" }, "No pit gain entered."));
+    } else {
+      var t = el("table", { "class": "data" });
+      var tbd = el("tbody");
+      var add = function (k, v) { var tr = el("tr"); tr.appendChild(el("td", null, k)); tr.appendChild(el("td", { "class": "num" }, v)); tbd.appendChild(tr); };
+      add("Height (along hole)", show(r.influx.height, "len") + " " + u("len"));
+      add("Gradient", show(r.influx.gradient, "grad", 3) + " " + u("grad"));
+      add("Likely type", r.influx.type);
+      r.influx.sections.forEach(function (p) { add("  in " + p.name, show(p.height, "len") + " " + u("len")); });
+      t.appendChild(tbd);
+      var sc = el("div", { "class": "scroll" });
+      sc.appendChild(t);
+      inf.appendChild(sc);
+      inf.appendChild(el("p", { "class": "help" }, "Indicative only. Gas below 0.25 psi/ft, oil or condensate or mixed 0.25 to 0.40, water above 0.40. Pit gain error, washouts, mixed influx and a float in the string all distort it."));
+    }
+
+    // Barite
+    var bd = $("barite");
+    clear(bd);
+    var b = r.barite;
+    var bt = el("table", { "class": "data" });
+    var bb = el("tbody");
+    var addb = function (k, v) { var tr = el("tr"); tr.appendChild(el("td", null, k)); tr.appendChild(el("td", { "class": "num" }, v)); bb.appendChild(tr); };
+    if (units === "metric") addb("Barite per m3 of mud", fmt(b.lb_per_bbl * 0.45359237 / C.BBL_M3, 0) + " kg/m3");
+    else addb("Barite per bbl of mud", fmt(b.lb_per_bbl, 1) + " lb/bbl");
+    if (b.total_lb !== null) {
+      addb("Total barite", units === "metric" ? fmt(b.total_lb * 0.45359237, 0) + " kg" : fmt(b.total_lb, 0) + " lb");
+      addb("100 lb sacks (rounded up)", fmt(b.sacks_rounded_up, 0));
+      addb("Volume increase", show(b.volume_increase, "vol") + " " + u("vol"));
+      addb("Final active volume", show(b.final_volume, "vol") + " " + u("vol"));
+    }
+    bt.appendChild(bb);
+    var bs = el("div", { "class": "scroll" });
+    bs.appendChild(bt);
+    bd.appendChild(bs);
+    bd.appendChild(el("p", { "class": "help" }, "Barite SG 4.2 (35.0 ppg). Active volume only; no dilution or margin added." + (b.total_lb === null ? " Enter an active system volume for totals." : "")));
+  }
+
+  // ---- Chart ----
+  var SVGNS = "http://www.w3.org/2000/svg";
+  function sv(tag, attrs, text) {
+    var e = document.createElementNS(SVGNS, tag);
+    Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+  function niceStep(range, target) {
+    var raw = range / target;
+    var p = Math.pow(10, Math.floor(Math.log(raw) / Math.LN10));
+    var m = raw / p;
+    return (m < 1.5 ? 1 : m < 3 ? 2 : m < 7 ? 5 : 10) * p;
+  }
+
+  function drawChart(r) {
+    var box = $("chart");
+    clear(box);
+    var W = 720, H = 300, L = 62, R = 16, T = 14, B = 42;
+    var pts = r.section_points.map(function (p) { return { x: p.strokes, y: disp(p.pressure, "pres") }; });
+    var sched = r.schedule.map(function (s) { return { x: s.strokes, y: disp(s.pressure, "pres") }; });
+    var icp = disp(r.icp, "pres"), fcp = disp(r.fcp, "pres");
+    var xMax = r.strokes.surface_to_bit;
+    var ys = pts.map(function (p) { return p.y; }).concat([icp, fcp]);
+    var yMin = Math.min.apply(null, ys), yMax = Math.max.apply(null, ys);
+    var pad = Math.max(10, (yMax - yMin) * 0.08);
+    yMin -= pad; yMax += pad;
+    var ystep = niceStep(yMax - yMin, 5);
+    yMin = Math.floor(yMin / ystep) * ystep; yMax = Math.ceil(yMax / ystep) * ystep;
+    var xstep = niceStep(xMax, 6);
+    var xTop = Math.ceil(xMax / xstep) * xstep;
+    var X = function (v) { return L + (W - L - R) * v / xTop; };
+    var Y = function (v) { return T + (H - T - B) * (yMax - v) / (yMax - yMin); };
+
+    var svg = sv("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-labelledby": "chart-title" });
+    svg.appendChild(sv("title", { id: "chart-title" }, "Drill pipe pressure from " + fmt(icp, 0) + " to " + fmt(fcp, 0) + " " + u("pres") + " over " + fmt(xMax, 0) + " strokes"));
+    for (var y = yMin; y <= yMax + 1e-9; y += ystep) {
+      svg.appendChild(sv("line", { "class": "grid", x1: L, x2: W - R, y1: Y(y), y2: Y(y) }));
+      svg.appendChild(sv("text", { x: L - 6, y: Y(y) + 4, "text-anchor": "end" }, fmt(y, 0)));
+    }
+    for (var x = 0; x <= xTop + 1e-9; x += xstep) {
+      svg.appendChild(sv("line", { "class": "grid", x1: X(x), x2: X(x), y1: T, y2: H - B }));
+      svg.appendChild(sv("text", { x: X(x), y: H - B + 16, "text-anchor": x === 0 ? "start" : (x >= xTop - 1e-9 ? "end" : "middle") }, fmt(x, 0)));
+    }
+    svg.appendChild(sv("line", { "class": "axis", x1: L, x2: W - R, y1: H - B, y2: H - B }));
+    svg.appendChild(sv("line", { "class": "axis", x1: L, x2: L, y1: T, y2: H - B }));
+    svg.appendChild(sv("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle" }, "Strokes pumped"));
+    svg.appendChild(sv("text", { x: 14, y: (T + H - B) / 2, "text-anchor": "middle", transform: "rotate(-90 14 " + ((T + H - B) / 2) + ")" }, "Drill pipe pressure (" + u("pres") + ")"));
+
+    var lineStk = r.strokes.surface_line;
+    if (r.deviated) {
+      svg.appendChild(sv("polyline", { "class": "straight", points: X(lineStk) + "," + Y(icp) + " " + X(xMax) + "," + Y(fcp) }));
+    }
+    var path = [];
+    if (lineStk > 0) path.push(X(0) + "," + Y(icp));
+    var src = r.deviated ? pts : [sched[0], sched[sched.length - 1]];
+    src.forEach(function (p) { path.push(X(p.x) + "," + Y(p.y)); });
+    svg.appendChild(sv("polyline", { "class": "sched", points: path.join(" ") }));
+    sched.forEach(function (p) { svg.appendChild(sv("rect", { "class": "step", x: X(p.x) - 2.5, y: Y(p.y) - 2.5, width: 5, height: 5 })); });
+    pts.forEach(function (p) { svg.appendChild(sv("circle", { "class": "pt", cx: X(p.x), cy: Y(p.y), r: 4.5 })); });
+    svg.appendChild(sv("text", { "class": "val", x: X(lineStk) + 8, y: Y(icp) - 6 }, "ICP " + fmt(icp, 0)));
+    svg.appendChild(sv("text", { "class": "val", x: X(xMax) - 4, y: Y(fcp) + 18, "text-anchor": "end" }, "FCP " + fmt(fcp, 0)));
+    box.appendChild(svg);
+    $("lg-straight").hidden = !r.deviated;
+  }
+
+  // ---- CSV ----
+  function csvText() {
+    if (!lastResult) return "";
+    var r = lastResult;
+    var q = function (s) { s = String(s); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    var lines = [["item", "value", "unit"].join(",")];
+    var add = function (k, v, unit) { lines.push([q(k), q(v), q(unit)].join(",")); };
+    var raw = function (v, kind, d) { return disp(v, kind).toFixed(d); };
+    add("note", "Training and cross-check aid. The rig's approved kill sheet and the well-site supervisor govern.", "");
+    add("units", units, "");
+    add("kmw_exact", raw(r.kmw_exact, "mw", 4), u("mw"));
+    add("kmw_rounded_up", raw(r.kmw_rounded, "mw", units === "metric" ? 0 : 1), u("mw"));
+    add("kmw_used", raw(r.kmw, "mw", 4), u("mw"));
+    add("icp", raw(r.icp, "pres", 1), u("pres"));
+    add("fcp", raw(r.fcp, "pres", 1), u("pres"));
+    add("maasp_omw", raw(r.maasp_omw, "pres", 1), u("pres"));
+    add("maasp_kmw", raw(r.maasp_kmw, "pres", 1), u("pres"));
+    add("lot_emw", raw(r.lot_emw, "mw", 3), u("mw"));
+    Object.keys(r.volumes).forEach(function (k) {
+      add(k + "_volume", raw(r.volumes[k], "vol", 3), u("vol"));
+      add(k + "_strokes", r.strokes[k].toFixed(0), "stk");
+      add(k + "_minutes", r.minutes[k].toFixed(1), "min");
+    });
+    r.schedule.forEach(function (s) {
+      add("schedule_step_" + s.step + "_strokes", s.strokes.toFixed(0), "stk");
+      add("schedule_step_" + s.step + "_pressure", raw(s.pressure, "pres", 1), u("pres"));
+    });
+    if (r.influx) {
+      add("influx_height", raw(r.influx.height, "len", 1), u("len"));
+      add("influx_gradient", raw(r.influx.gradient, "grad", 4), u("grad"));
+      add("influx_type", r.influx.type, "");
+    }
+    add("barite_lb_per_bbl", r.barite.lb_per_bbl.toFixed(2), "lb/bbl");
+    if (r.barite.total_lb !== null) {
+      add("barite_total_lb", r.barite.total_lb.toFixed(0), "lb");
+      add("barite_sacks_100lb", String(r.barite.sacks_rounded_up), "sacks");
+      add("barite_volume_increase", raw(r.barite.volume_increase, "vol", 2), u("vol"));
+    }
+    r.warnings.forEach(function (w) { add("check_" + w.level, w.message, ""); });
+    return lines.join("\n") + "\n";
+  }
+
+  $("copy-csv").addEventListener("click", function () {
+    var text = csvText();
+    var msg = $("copy-msg");
+    var fallback = function () {
+      $("csv-fallback").value = text;
+      $("fallback-wrap").hidden = false;
+      msg.hidden = true;
+      $("csv-fallback").focus();
+      $("csv-fallback").select();
+    };
+    if (!text) { msg.textContent = "Nothing to copy: fix the input error first."; msg.hidden = false; return; }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        msg.textContent = "Copied results as CSV."; msg.hidden = false; $("fallback-wrap").hidden = true;
+      }).catch(fallback);
+    } catch (e) { fallback(); }
+  });
+
+  // ---- File input ----
+  $("file-input").addEventListener("change", function (ev) {
+    var f = ev.target.files && ev.target.files[0];
+    var st = $("file-status");
+    if (!f) return;
+    if (f.size > C.MAX_BYTES) {
+      st.className = "status bad"; st.textContent = "File is larger than 5 MB. Nothing was loaded.";
+      return;
+    }
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+      try {
+        var c = C.parseText(String(reader.result));
+        C.toImperial(c);
+        unitMemo = null;
+        writeCase(c);
+        $("example-tag").textContent = "Your data";
+        st.className = "status ok";
+        st.textContent = "Loaded " + f.name + ". Check every value against the rig's records.";
+        recompute();
+      } catch (e) {
+        st.className = "status bad";
+        st.textContent = (e.isInputError ? e.message : "Could not read the file.") + " Nothing was loaded.";
+      }
+    });
+    reader.addEventListener("error", function () { st.className = "status bad"; st.textContent = "The browser could not read that file."; });
+    reader.readAsText(f);
+  });
+
+  function loadExample(key) {
+    var ex = JSON.parse(JSON.stringify(EXAMPLES[key] || EXAMPLES.vertical));
+    var want = units;
+    unitMemo = null;
+    writeCase(ex);
+    if (want === "metric") convertForm("metric");
+    $("example-tag").textContent = "Example data";
+    var st = $("file-status");
+    st.className = "status ok";
+    st.textContent = ex.label + " Replace every value with your well's verified numbers.";
+    recompute();
+  }
+
+  $("load-example").addEventListener("click", function () { loadExample($("example-select").value); });
+  $("units-imperial").addEventListener("click", function () { convertForm("imperial"); store("units", "imperial"); recompute(); });
+  $("units-metric").addEventListener("click", function () { convertForm("metric"); store("units", "metric"); recompute(); });
+  $("deviated").addEventListener("change", recompute);
+  $("kmw-basis").addEventListener("change", recompute);
+  $("lot-mode").addEventListener("change", function () { applyLotMode(); recompute(); });
+  $("add-string").addEventListener("click", function () {
+    var rows = readSections("string"); rows.push({ name: "", length: "", capacity: "", bottom_tvd: "" });
+    renderSections("string", rows); recompute();
+  });
+  $("add-annulus").addEventListener("click", function () {
+    var rows = readSections("annulus"); rows.push({ name: "", length: "", capacity: "" });
+    renderSections("annulus", rows); recompute();
+  });
+
+  if (recall("units") === "metric") units = "metric";
+  loadExample("vertical");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+field,value
+# Example data: vertical land well, 8-1/2 in hole, 9-5/8 in shoe. Illustrative values only.
+units,imperial
+well_md,10000
+well_tvd,10000
+shoe_md,6000
+shoe_tvd,6000
+omw,9.8
+lot_emw,14.5
+sidpp,400
+sicp,600
+pit_gain,15
+scr_pressure,450
+kill_rate_spm,30
+pump_output,0.102
+surface_line_volume,0
+active_volume,600
+deviated,no
+kmw_basis,rounded
+# string,name,length ft,capacity bbl/ft,bottom TVD ft (deviated mode)
+string,5 in DP 19.5 lb/ft,8860,0.01776,8860
+string,5 in HWDP,540,0.00874,9400
+string,6-1/2 in DC,600,0.00768,10000
+# annulus rows run from the bit upward
+annulus,DC x open hole,600,0.02914
+annulus,DP/HWDP x open hole,3400,0.0459
+annulus,DP x casing,6000,0.05154
